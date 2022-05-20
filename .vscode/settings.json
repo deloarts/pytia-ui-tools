@@ -1,0 +1,30 @@
+{
+    "cSpell.words": [
+        "CATIA",
+        "hwnd",
+        "ipadx",
+        "ipady",
+        "NOACTIVATE",
+        "NOMOVE",
+        "NOSIZE",
+        "pdoc",
+        "pylint",
+        "pylintrc",
+        "pyproject",
+        "pyscreenshot",
+        "pytest",
+        "pytia",
+        "pywin",
+        "rcfile",
+        "rootx",
+        "Segoe",
+        "tkmsg",
+        "virtualenvs",
+        "winfo"
+    ],
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

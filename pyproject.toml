@@ -1,0 +1,26 @@
+[tool.poetry]
+authors = ["Philip Delorenzo <git@deloarts.com>"]
+classifiers = ["Operating System :: Windows"]
+description = "Helper functions and widgets for all pytia ui apps."
+name = "pytia-ui-tools"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+Jinja2 = "3.1.2"
+Pillow = "9.1.0"
+pyscreenshot = "3.0"
+python = "^3.10"
+pywin32 = "304"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+pdoc3 = "^0.10.0"
+pre-commit = "^2.19.0"
+pylint = "^2.13.9"
+pytest = "^7.1.1"
+validators = "^0.19.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["setuptools", "poetry-core>=1.0.0"]
