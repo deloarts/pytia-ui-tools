@@ -4,11 +4,11 @@ classifiers = ["Operating System :: Windows"]
 description = "Helper functions and widgets for all pytia ui apps."
 name = "pytia-ui-tools"
 readme = "README.md"
-version = "0.1.0"
+version = "0.1.1"
 
 [tool.poetry.dependencies]
 Jinja2 = "3.1.2"
-Pillow = "9.1.0"
+Pillow = "9.1.1"
 pyscreenshot = "3.0"
 python = "^3.10"
 pywin32 = "304"

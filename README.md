@@ -1,9 +1,9 @@
-# PYTIA UI Tools
+# pytia ui tools
 
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-Alpha-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.1.0-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/badge/Version-0.1.1-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -168,7 +168,7 @@ On a new revision, do the following:
    - [README.md](README.md)
 3. Run all **tests**: `poetry run pytest`
 4. Check **pylint** output: `poetry run pylint pytia_ui_tools/`
-5. Update the **documentation**: `poetry run pdoc --html --output-dir docs pytia_ui_tools`
+5. Update the **documentation**: `poetry run pdoc --force --html --output-dir docs pytia_ui_tools`
 6. Update the **lockfile**: `poetry lock`
 7. Update the **requirements.txt**: `poetry export --dev -f requirements.txt -o requirements.txt`
 8. **Build** the package: `poetry build`
@@ -179,6 +179,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.1.1**: Bump pillow to 9.1.1.  
 **v0.1.0**: Initial commit.  
 
 ## 5 to do
