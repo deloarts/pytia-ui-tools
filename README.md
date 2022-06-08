@@ -179,6 +179,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.2.0**: Add NumberVar.  
 **v0.1.2**: Fix comma issue on NumberEntry.  
 **v0.1.1**: Bump pillow to 9.1.1.  
 **v0.1.0**: Initial commit.  
