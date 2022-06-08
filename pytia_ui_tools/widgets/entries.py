@@ -38,5 +38,12 @@ class NumberEntry(ttk.Entry):
             value = value.replace(",", ".")
 
         if not re.match(r"(\d|\d.\d)$", value):
-            # if not value.isdigit():
-            self.set("".join(x for x in value if x.isdigit() or x in [".", ","]))
+            fp = False
+            v = ""
+            for c in value:
+                if c.isdigit():
+                    v += c
+                if c in [".", ","] and not fp:
+                    v += c
+                    fp = True
+            self.set(v)

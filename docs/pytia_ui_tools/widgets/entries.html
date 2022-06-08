@@ -67,8 +67,15 @@ class NumberEntry(ttk.Entry):
             value = value.replace(&#34;,&#34;, &#34;.&#34;)
 
         if not re.match(r&#34;(\d|\d.\d)$&#34;, value):
-            # if not value.isdigit():
-            self.set(&#34;&#34;.join(x for x in value if x.isdigit() or x in [&#34;.&#34;, &#34;,&#34;]))</code></pre>
+            fp = False
+            v = &#34;&#34;
+            for c in value:
+                if c.isdigit():
+                    v += c
+                if c in [&#34;.&#34;, &#34;,&#34;] and not fp:
+                    v += c
+                    fp = True
+            self.set(v)</code></pre>
 </details>
 </section>
 <section>
@@ -131,8 +138,15 @@ class NumberEntry(ttk.Entry):
             value = value.replace(&#34;,&#34;, &#34;.&#34;)
 
         if not re.match(r&#34;(\d|\d.\d)$&#34;, value):
-            # if not value.isdigit():
-            self.set(&#34;&#34;.join(x for x in value if x.isdigit() or x in [&#34;.&#34;, &#34;,&#34;]))</code></pre>
+            fp = False
+            v = &#34;&#34;
+            for c in value:
+                if c.isdigit():
+                    v += c
+                if c in [&#34;.&#34;, &#34;,&#34;] and not fp:
+                    v += c
+                    fp = True
+            self.set(v)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
