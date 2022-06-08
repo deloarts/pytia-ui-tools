@@ -1,4 +1,4 @@
-# PYTIA UI Tools
+# pytia ui tools
 
 Helper functions and widgets for all pytia ui apps.
 
@@ -168,7 +168,7 @@ On a new revision, do the following:
    - [README.md](README.md)
 3. Run all **tests**: `poetry run pytest`
 4. Check **pylint** output: `poetry run pylint pytia_ui_tools/`
-5. Update the **documentation**: `poetry run pdoc --html --output-dir docs pytia_ui_tools`
+5. Update the **documentation**: `poetry run pdoc --force --html --output-dir docs pytia_ui_tools`
 6. Update the **lockfile**: `poetry lock`
 7. Update the **requirements.txt**: `poetry export --dev -f requirements.txt -o requirements.txt`
 8. **Build** the package: `poetry build`
