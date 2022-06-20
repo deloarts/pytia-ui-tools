@@ -3,7 +3,7 @@
 """
 
 from ctypes import windll, wintypes
-from tkinter import Tk
+from tkinter import Tk, Toplevel
 
 from pytia_ui_tools.const import (
     GWL_STYLE,
@@ -19,7 +19,7 @@ from pytia_ui_tools.const import (
 class WindowManager:
     """Class for managing tk window objects."""
 
-    def __init__(self, window: Tk) -> None:
+    def __init__(self, window: Tk | Toplevel) -> None:
         """Inits the window manager class.
 
         Example of usage:
