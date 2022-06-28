@@ -1,5 +1,5 @@
 """
-    Tkinter Vars templates.
+    Tkinter number variable.
 """
 
 import re
