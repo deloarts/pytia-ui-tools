@@ -32,7 +32,7 @@
 &#34;&#34;&#34;
 
 from ctypes import windll, wintypes
-from tkinter import Tk
+from tkinter import Tk, Toplevel
 
 from pytia_ui_tools.const import (
     GWL_STYLE,
@@ -48,7 +48,7 @@ from pytia_ui_tools.const import (
 class WindowManager:
     &#34;&#34;&#34;Class for managing tk window objects.&#34;&#34;&#34;
 
-    def __init__(self, window: Tk) -&gt; None:
+    def __init__(self, window: Tk | Toplevel) -&gt; None:
         &#34;&#34;&#34;Inits the window manager class.
 
         Example of usage:
@@ -148,7 +148,7 @@ class WindowManager:
 <dl>
 <dt id="pytia_ui_tools.window_manager.WindowManager"><code class="flex name class">
 <span>class <span class="ident">WindowManager</span></span>
-<span>(</span><span>window: tkinter.Tk)</span>
+<span>(</span><span>window: tkinter.Tk | tkinter.Toplevel)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Class for managing tk window objects.</p>
@@ -174,7 +174,7 @@ class GUI(tk.Tk):
 <pre><code class="python">class WindowManager:
     &#34;&#34;&#34;Class for managing tk window objects.&#34;&#34;&#34;
 
-    def __init__(self, window: Tk) -&gt; None:
+    def __init__(self, window: Tk | Toplevel) -&gt; None:
         &#34;&#34;&#34;Inits the window manager class.
 
         Example of usage:

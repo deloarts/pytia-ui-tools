@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>pytia_ui_tools API documentation</title>
-<meta name="description" content="**pytia_ui_tools**: Helper functions and widgets for all pytia ui apps …" />
+<title>pytia_ui_tools.helper.validators API documentation</title>
+<meta name="description" content="Helper functions for validations." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,75 +19,108 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Package <code>pytia_ui_tools</code></h1>
+<h1 class="title">Module <code>pytia_ui_tools.helper.validators</code></h1>
 </header>
 <section id="section-intro">
-<p><strong>pytia_ui_tools</strong>: Helper functions and widgets for all pytia ui apps.</p>
-<p>This package only provides helper functions, widgets and some other stuff for all pytia ui apps.
-This package is therefore a required dependency for almost all pytia apps, but does nothing on
-its own.</p>
-<p><a href="https://github.com/deloarts/pytia-ui-tools">https://github.com/deloarts/pytia-ui-tools</a></p>
+<p>Helper functions for validations.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-    **pytia_ui_tools**: Helper functions and widgets for all pytia ui apps.
-
-    This package only provides helper functions, widgets and some other stuff for all pytia ui apps.
-    This package is therefore a required dependency for almost all pytia apps, but does nothing on
-    its own.
-
-    https://github.com/deloarts/pytia-ui-tools
+    Helper functions for validations.
 &#34;&#34;&#34;
 
-__version__ = &#34;0.3.0&#34;</code></pre>
+import re
+
+
+def validate_number(input_value: str, dot_only: bool = False) -&gt; str:
+    &#34;&#34;&#34;
+    Validates the input. Returns the validated number.
+
+    Args:
+        input (str): The input that needs validation.
+        dot_only (bool, optional): Replaces comma with dot. Defaults to False.
+
+    Returns:
+        Optional[str]: The validated input.
+    &#34;&#34;&#34;
+    if dot_only:
+        value = input_value.replace(&#34;,&#34;, &#34;.&#34;)
+    else:
+        value = input_value
+
+    if not re.match(r&#34;(\d|\d.\d)$&#34;, value):
+        new_value = &#34;&#34;
+        floating_point = False
+        for character in value:
+            if character.isdigit():
+                new_value += character
+            if character in [&#34;.&#34;, &#34;,&#34;] and not floating_point:
+                new_value += character
+                floating_point = True
+        return new_value
+    return input_value</code></pre>
 </details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt><code class="name"><a title="pytia_ui_tools.const" href="const.html">pytia_ui_tools.const</a></code></dt>
+<dt id="pytia_ui_tools.helper.validators.validate_number"><code class="name flex">
+<span>def <span class="ident">validate_number</span></span>(<span>input_value: str, dot_only: bool = False) ‑> str</span>
+</code></dt>
 <dd>
-<div class="desc"><p>Constants for this package.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.handlers" href="handlers/index.html">pytia_ui_tools.handlers</a></code></dt>
-<dd>
-<div class="desc"><p>Handler classes for pytia_ui_tools.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.helper" href="helper/index.html">pytia_ui_tools.helper</a></code></dt>
-<dd>
-<div class="desc"><p>Helper functions for pytia ui tools.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.log" href="log.html">pytia_ui_tools.log</a></code></dt>
-<dd>
-<div class="desc"><p>Logging module that connects to the <strong>pytia</strong> logger.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.templates" href="templates/index.html">pytia_ui_tools.templates</a></code></dt>
-<dd>
-<div class="desc"><p>Template files for mailing.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.tools" href="tools/index.html">pytia_ui_tools.tools</a></code></dt>
-<dd>
-<div class="desc"><p>Tools for tkinter apps.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.variables" href="variables/index.html">pytia_ui_tools.variables</a></code></dt>
-<dd>
-<div class="desc"><p>Variables for tkinter apps.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.widgets" href="widgets/index.html">pytia_ui_tools.widgets</a></code></dt>
-<dd>
-<div class="desc"><p>Widgets for tkinter apps.</p></div>
-</dd>
-<dt><code class="name"><a title="pytia_ui_tools.window_manager" href="window_manager.html">pytia_ui_tools.window_manager</a></code></dt>
-<dd>
-<div class="desc"><p>Module for the WindowManager class.</p></div>
+<div class="desc"><p>Validates the input. Returns the validated number.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input</code></strong> :&ensp;<code>str</code></dt>
+<dd>The input that needs validation.</dd>
+<dt><strong><code>dot_only</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Replaces comma with dot. Defaults to False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Optional[str]</code></dt>
+<dd>The validated input.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validate_number(input_value: str, dot_only: bool = False) -&gt; str:
+    &#34;&#34;&#34;
+    Validates the input. Returns the validated number.
+
+    Args:
+        input (str): The input that needs validation.
+        dot_only (bool, optional): Replaces comma with dot. Defaults to False.
+
+    Returns:
+        Optional[str]: The validated input.
+    &#34;&#34;&#34;
+    if dot_only:
+        value = input_value.replace(&#34;,&#34;, &#34;.&#34;)
+    else:
+        value = input_value
+
+    if not re.match(r&#34;(\d|\d.\d)$&#34;, value):
+        new_value = &#34;&#34;
+        floating_point = False
+        for character in value:
+            if character.isdigit():
+                new_value += character
+            if character in [&#34;.&#34;, &#34;,&#34;] and not floating_point:
+                new_value += character
+                floating_point = True
+        return new_value
+    return input_value</code></pre>
+</details>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
 </section>
 <section>
 </section>
@@ -98,17 +131,14 @@ __version__ = &#34;0.3.0&#34;</code></pre>
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3>Super-module</h3>
 <ul>
-<li><code><a title="pytia_ui_tools.const" href="const.html">pytia_ui_tools.const</a></code></li>
-<li><code><a title="pytia_ui_tools.handlers" href="handlers/index.html">pytia_ui_tools.handlers</a></code></li>
-<li><code><a title="pytia_ui_tools.helper" href="helper/index.html">pytia_ui_tools.helper</a></code></li>
-<li><code><a title="pytia_ui_tools.log" href="log.html">pytia_ui_tools.log</a></code></li>
-<li><code><a title="pytia_ui_tools.templates" href="templates/index.html">pytia_ui_tools.templates</a></code></li>
-<li><code><a title="pytia_ui_tools.tools" href="tools/index.html">pytia_ui_tools.tools</a></code></li>
-<li><code><a title="pytia_ui_tools.variables" href="variables/index.html">pytia_ui_tools.variables</a></code></li>
-<li><code><a title="pytia_ui_tools.widgets" href="widgets/index.html">pytia_ui_tools.widgets</a></code></li>
-<li><code><a title="pytia_ui_tools.window_manager" href="window_manager.html">pytia_ui_tools.window_manager</a></code></li>
+<li><code><a title="pytia_ui_tools.helper" href="index.html">pytia_ui_tools.helper</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="pytia_ui_tools.helper.validators.validate_number" href="#pytia_ui_tools.helper.validators.validate_number">validate_number</a></code></li>
 </ul>
 </li>
 </ul>
