@@ -14,9 +14,9 @@ class ScrolledText(scrolledtext.ScrolledText):
 
     def __init__(
         self,
+        *args,
         parent: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe | Toplevel,
         textvariable: Optional[StringVar] = None,
-        *args,
         **kwargs,
     ):
         self._state = tk.NORMAL
