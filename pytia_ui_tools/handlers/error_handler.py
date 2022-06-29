@@ -23,7 +23,7 @@ class ErrorHandler:
         Inits the ErrorHandler. Connects to the **pytia** logger.
 
         Args:
-            mail_handler (MailHandler): The beforehand instanciated mail handler.
+            mail_handler (MailHandler): The beforehand instantiated mail handler.
             warning_exceptions (Optional[List[Callable]], optional): A list of Exceptions that \
                 won't raise an error msg. Defaults to None.
         """

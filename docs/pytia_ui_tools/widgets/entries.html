@@ -31,9 +31,10 @@
     Tkinter Entries templates.
 &#34;&#34;&#34;
 
-import re
 import tkinter as tk
 from tkinter import StringVar, ttk
+
+from pytia_ui_tools.helper.validators import validate_number
 
 
 class NumberEntry(ttk.Entry):
@@ -44,7 +45,7 @@ class NumberEntry(ttk.Entry):
         master: tk.Tk | tk.Frame | ttk.Frame,
         string_var: StringVar,
         replace_comma: bool = True,
-        **kwargs
+        **kwargs,
     ):
         &#34;&#34;&#34;
         Inits the widget.
@@ -62,20 +63,7 @@ class NumberEntry(ttk.Entry):
 
     def _validate(self, *_):
         &#34;&#34;&#34;Validates the input.&#34;&#34;&#34;
-        value = self.get()
-        if self.repl:
-            value = value.replace(&#34;,&#34;, &#34;.&#34;)
-
-        if not re.match(r&#34;(\d|\d.\d)$&#34;, value):
-            fp = False
-            v = &#34;&#34;
-            for c in value:
-                if c.isdigit():
-                    v += c
-                if c in [&#34;.&#34;, &#34;,&#34;] and not fp:
-                    v += c
-                    fp = True
-            self.set(v)</code></pre>
+        self.set(validate_number(self.get(), self.repl))</code></pre>
 </details>
 </section>
 <section>
@@ -115,7 +103,7 @@ class NumberEntry(ttk.Entry):
         master: tk.Tk | tk.Frame | ttk.Frame,
         string_var: StringVar,
         replace_comma: bool = True,
-        **kwargs
+        **kwargs,
     ):
         &#34;&#34;&#34;
         Inits the widget.
@@ -133,20 +121,7 @@ class NumberEntry(ttk.Entry):
 
     def _validate(self, *_):
         &#34;&#34;&#34;Validates the input.&#34;&#34;&#34;
-        value = self.get()
-        if self.repl:
-            value = value.replace(&#34;,&#34;, &#34;.&#34;)
-
-        if not re.match(r&#34;(\d|\d.\d)$&#34;, value):
-            fp = False
-            v = &#34;&#34;
-            for c in value:
-                if c.isdigit():
-                    v += c
-                if c in [&#34;.&#34;, &#34;,&#34;] and not fp:
-                    v += c
-                    fp = True
-            self.set(v)</code></pre>
+        self.set(validate_number(self.get(), self.repl))</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">

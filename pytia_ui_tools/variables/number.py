@@ -1,9 +1,10 @@
 """
-    Tkinter Vars templates.
+    Tkinter number variable.
 """
 
-import re
 import tkinter as tk
+
+from pytia_ui_tools.helper.validators import validate_number
 
 
 class NumberVar(tk.StringVar):
@@ -22,18 +23,4 @@ class NumberVar(tk.StringVar):
 
     def _validate(self, *_):
         """Validates the input."""
-        value = self.get()
-
-        if self.repl:
-            value = value.replace(",", ".")
-
-        if not re.match(r"(\d|\d.\d)$", value):
-            fp = False
-            v = ""
-            for c in value:
-                if c.isdigit():
-                    v += c
-                if c in [".", ","] and not fp:
-                    v += c
-                    fp = True
-            self.set(v)
+        self.set(validate_number(self.get(), self.repl))

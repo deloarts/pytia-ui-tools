@@ -2,9 +2,10 @@
     Tkinter Entries templates.
 """
 
-import re
 import tkinter as tk
 from tkinter import StringVar, ttk
+
+from pytia_ui_tools.helper.validators import validate_number
 
 
 class NumberEntry(ttk.Entry):
@@ -15,7 +16,7 @@ class NumberEntry(ttk.Entry):
         master: tk.Tk | tk.Frame | ttk.Frame,
         string_var: StringVar,
         replace_comma: bool = True,
-        **kwargs
+        **kwargs,
     ):
         """
         Inits the widget.
@@ -33,17 +34,4 @@ class NumberEntry(ttk.Entry):
 
     def _validate(self, *_):
         """Validates the input."""
-        value = self.get()
-        if self.repl:
-            value = value.replace(",", ".")
-
-        if not re.match(r"(\d|\d.\d)$", value):
-            fp = False
-            v = ""
-            for c in value:
-                if c.isdigit():
-                    v += c
-                if c in [".", ","] and not fp:
-                    v += c
-                    fp = True
-            self.set(v)
+        self.set(validate_number(self.get(), self.repl))
