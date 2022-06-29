@@ -31,7 +31,6 @@ class TextEditor(Toplevel):
         Toplevel.__init__(self)
 
         self.textvariable = textvariable
-        self.window_manager = WindowManager(self)
 
         self.title(title if title else "Text Editor")
         self.attributes("-topmost", True)
@@ -87,7 +86,10 @@ class TextEditor(Toplevel):
 
         self.update()
         self.grab_set()
-        self.window_manager.remove_window_buttons()
+
+        window_manager = WindowManager(self)
+        window_manager.remove_window_buttons()
+
         self.mainloop()
 
     def on_btn_apply(self) -> None:
