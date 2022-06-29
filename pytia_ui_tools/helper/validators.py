@@ -5,7 +5,7 @@
 import re
 
 
-def validate_number(input: str, dot_only: bool = False) -> str:
+def validate_number(input_value: str, dot_only: bool = False) -> str:
     """
     Validates the input. Returns the validated number.
 
@@ -17,9 +17,9 @@ def validate_number(input: str, dot_only: bool = False) -> str:
         Optional[str]: The validated input.
     """
     if dot_only:
-        value = input.replace(",", ".")
+        value = input_value.replace(",", ".")
     else:
-        value = input
+        value = input_value
 
     if not re.match(r"(\d|\d.\d)$", value):
         new_value = ""
@@ -31,4 +31,4 @@ def validate_number(input: str, dot_only: bool = False) -> str:
                 new_value += character
                 floating_point = True
         return new_value
-    return input
+    return input_value
