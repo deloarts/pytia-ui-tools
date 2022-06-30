@@ -19,14 +19,14 @@ class ScrolledText(scrolledtext.ScrolledText):
         textvariable: Optional[StringVar] = None,
         **kwargs,
     ):
-        self._state = tk.NORMAL
         self._textvariable = textvariable or StringVar()
 
-        if "state" in kwargs:
-            self._state = kwargs["state"]
-            kwargs.pop("state")
-
         super().__init__(parent, *args, **kwargs)
+
+        if "state" in kwargs:
+            self.state = kwargs["state"]
+        else:
+            self.state = tk.NORMAL
 
         if self._textvariable is not None:
             self.insert("1.0", self._textvariable.get())
