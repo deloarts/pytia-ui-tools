@@ -48,14 +48,14 @@ class ScrolledText(scrolledtext.ScrolledText):
         textvariable: Optional[StringVar] = None,
         **kwargs,
     ):
-        self._state = tk.NORMAL
         self._textvariable = textvariable or StringVar()
 
-        if &#34;state&#34; in kwargs:
-            self._state = kwargs[&#34;state&#34;]
-            kwargs.pop(&#34;state&#34;)
-
         super().__init__(parent, *args, **kwargs)
+
+        if &#34;state&#34; in kwargs:
+            self.state = kwargs[&#34;state&#34;]
+        else:
+            self.state = tk.NORMAL
 
         if self._textvariable is not None:
             self.insert(&#34;1.0&#34;, self._textvariable.get())
@@ -92,11 +92,14 @@ class ScrolledText(scrolledtext.ScrolledText):
         Callback function for the textvariable trace.
         Writes the textvariable value to the text widget.
         &#34;&#34;&#34;
+        state = self[&#34;state&#34;]
+        self[&#34;state&#34;] = tk.NORMAL
         text_current = self.get(&#34;1.0&#34;, &#34;end-1c&#34;)
         var_current = self._textvariable.get()  # type: ignore
         if text_current != var_current:
             self.delete(&#34;1.0&#34;, &#34;end&#34;)
             self.insert(&#34;1.0&#34;, var_current)
+        self[&#34;state&#34;] = state
 
     def _on_widget_change(self, event=None):
         &#34;&#34;&#34;
@@ -186,14 +189,14 @@ state, tabs, undo, width, wrap,
         textvariable: Optional[StringVar] = None,
         **kwargs,
     ):
-        self._state = tk.NORMAL
         self._textvariable = textvariable or StringVar()
 
-        if &#34;state&#34; in kwargs:
-            self._state = kwargs[&#34;state&#34;]
-            kwargs.pop(&#34;state&#34;)
-
         super().__init__(parent, *args, **kwargs)
+
+        if &#34;state&#34; in kwargs:
+            self.state = kwargs[&#34;state&#34;]
+        else:
+            self.state = tk.NORMAL
 
         if self._textvariable is not None:
             self.insert(&#34;1.0&#34;, self._textvariable.get())
@@ -230,11 +233,14 @@ state, tabs, undo, width, wrap,
         Callback function for the textvariable trace.
         Writes the textvariable value to the text widget.
         &#34;&#34;&#34;
+        state = self[&#34;state&#34;]
+        self[&#34;state&#34;] = tk.NORMAL
         text_current = self.get(&#34;1.0&#34;, &#34;end-1c&#34;)
         var_current = self._textvariable.get()  # type: ignore
         if text_current != var_current:
             self.delete(&#34;1.0&#34;, &#34;end&#34;)
             self.insert(&#34;1.0&#34;, var_current)
+        self[&#34;state&#34;] = state
 
     def _on_widget_change(self, event=None):
         &#34;&#34;&#34;
