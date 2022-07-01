@@ -19,14 +19,14 @@ class ScrolledText(scrolledtext.ScrolledText):
         textvariable: Optional[StringVar] = None,
         **kwargs,
     ):
-        self._state = tk.NORMAL
         self._textvariable = textvariable or StringVar()
 
-        if "state" in kwargs:
-            self._state = kwargs["state"]
-            kwargs.pop("state")
-
         super().__init__(parent, *args, **kwargs)
+
+        if "state" in kwargs:
+            self.state = kwargs["state"]
+        else:
+            self.state = tk.NORMAL
 
         if self._textvariable is not None:
             self.insert("1.0", self._textvariable.get())
@@ -63,11 +63,14 @@ class ScrolledText(scrolledtext.ScrolledText):
         Callback function for the textvariable trace.
         Writes the textvariable value to the text widget.
         """
+        state = self["state"]
+        self["state"] = tk.NORMAL
         text_current = self.get("1.0", "end-1c")
         var_current = self._textvariable.get()  # type: ignore
         if text_current != var_current:
             self.delete("1.0", "end")
             self.insert("1.0", var_current)
+        self["state"] = state
 
     def _on_widget_change(self, event=None):
         """
