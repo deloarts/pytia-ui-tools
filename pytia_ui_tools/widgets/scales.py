@@ -46,6 +46,15 @@ class SnapScale(ttk.Scale):
             **kwargs
         )
 
+    def configure(self, *args, **kwargs) -> None:
+        """Overwrites the configure method of the widget and applies the correct command."""
+        if "command" in kwargs:
+            self.command = kwargs["command"]
+            kwargs.pop("command")
+            super().configure(command=self._value_changed, *args, **kwargs)
+        else:
+            super().configure(*args, **kwargs)
+
     def _value_changed(self, _):
         """Callback function on value change."""
         multiples = [n for n in range(self.from_, self.to + 1) if n % self.tick == 0]
