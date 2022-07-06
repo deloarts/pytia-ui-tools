@@ -8,7 +8,7 @@ from typing import Callable, Optional
 
 
 class SnapScale(ttk.Scale):
-    """Scale sublass that limits the precision of values."""
+    """Scale subclass that limits the precision of values."""
 
     def __init__(
         self,

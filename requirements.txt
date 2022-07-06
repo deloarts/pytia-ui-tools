@@ -257,7 +257,7 @@ pywin32==304 \
     --hash=sha256:ead865a2e179b30fb717831f73cf4373401fc62fbc3455a0889a7ddac848f83e \
     --hash=sha256:25746d841201fd9f96b648a248f731c1dec851c9a08b8e33da8b56148e4c65cc \
     --hash=sha256:d24a3382f013b21aa24a5cfbfad5a2cd9926610c0affde3e8ab5b3d7dbcf4ac9
-pyyaml==6.0; python_version >= "3.7" \
+pyyaml==6.0; python_version >= "3.6" \
     --hash=sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53 \
     --hash=sha256:9df7ed3b3d2e0ecfe09e14741b857df43adb5a3ddadc919a2d94fbdf78fea53c \
     --hash=sha256:77f396e6ef4c73fdc33a9157446466f1cff553d979bd00ecb64385760c6babdc \
