@@ -26,6 +26,7 @@ class Workspace:
                 found.
         """
         self._model: WorkspaceModel
+        self._workspace_folder: Path | None = None
         self._path = path
         self._filename = filename
         self._allow_outside_workspace = allow_outside_workspace
@@ -39,6 +40,7 @@ class Workspace:
                     try:
                         self._model = WorkspaceModel.create(yaml.safe_load(f))
                         self._available = True
+                        self._workspace_folder = parent
                         log.info(f"Loaded content from workspace file {f.name!r} ")
                         return self._model
                     except yaml.YAMLError as e:
@@ -63,3 +65,8 @@ class Workspace:
     def available(self) -> bool:
         """Returns wether the workspace file is available or not."""
         return self._available
+
+    @property
+    def workspace_folder(self) -> Path | None:
+        """Returns the folder in which the workspace file is saved."""
+        return self._workspace_folder
