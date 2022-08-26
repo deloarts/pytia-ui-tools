@@ -3,6 +3,7 @@
 """
 
 import os
+from pathlib import Path
 from tkinter import messagebox as tkmsg
 from typing import List, Optional
 
@@ -17,7 +18,7 @@ class MailHandler:
     """Class for handling mails via the local MS Outlook app."""
 
     def __init__(
-        self, standard_receiver: str, app_title: str, app_version: str, logfile: str
+        self, standard_receiver: str, app_title: str, app_version: str, logfile: Path
     ) -> None:
         """
         Inits the mail handler for sending mails through the local MS Outlook app.
@@ -26,7 +27,7 @@ class MailHandler:
             standard_receiver (str): The mail address of the sys admin.
             app_title (str): The title of your tkinter GUI.
             app_version (str): The version of the tkinter GUI.
-            logfile (str): The path to the current logfile of your GUI.
+            logfile (Path): The path to the current logfile of your GUI.
         """
         self.app_title = app_title
         self.app_version = app_version
@@ -124,7 +125,7 @@ class MailHandler:
             )
 
     def send_error_mail(
-        self, error_value: str, screenshot_path: Optional[str] = None
+        self, error_value: str, screenshot_path: Optional[Path] = None
     ) -> None:
         """
         Sends a mail from an error with the logfile using the local MS Outlook installation to the \
@@ -147,9 +148,9 @@ class MailHandler:
                 version=self.app_version,
                 error=error_value,
             )
-            attachments = [self.logfile]
-            if screenshot_path:
-                attachments.append(screenshot_path)
+            attachments = [str(self.logfile)]
+            if screenshot_path is not None:
+                attachments.append(str(screenshot_path))
 
             self.send_mail(
                 receiver=self.standard_receiver,

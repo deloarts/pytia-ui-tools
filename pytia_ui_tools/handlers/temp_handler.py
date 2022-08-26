@@ -4,8 +4,9 @@
 
 import atexit
 import os
+from pathlib import Path
 from tempfile import gettempdir
-from typing import Optional
+from typing import List, Optional
 
 import pyscreenshot
 from pytia_ui_tools.log import log
@@ -19,7 +20,7 @@ class TempHandler:
         Inits the temp handler.
         """
         self.tempdir = gettempdir()
-        self.files_to_delete = []
+        self.files_to_delete: List[Path] = []
 
         atexit.register(self._delete_files)
 
@@ -39,22 +40,22 @@ class TempHandler:
         Args:
             filename (str): The file inside the tempfolder.
         """
-        path = self.tempdir + "\\" + filename
+        path = Path(self.tempdir, filename)
         if os.path.exists(path):
             os.remove(path)
-            log.info(f"Deleted tempfile {path!r}")
+            log.info(f"Deleted tempfile {str(path)!r}")
 
-    def make_screenshot(self, filename: str = "screenshot.png") -> Optional[str]:
+    def make_screenshot(self, filename: str = "screenshot.png") -> Optional[Path]:
         """
         Takes a screenshot of the error and returns the save path.
 
         Args:
-            filename (str): The filename (with file extension) of the screenshot PNG.
+            filename (Path): The filename (with file extension) of the screenshot PNG.
 
         Returns:
             Optional[Path]: The save path. None if no screenshot has been taken.
         """
-        path = f"{gettempdir()}\\{filename}"
+        path = Path(gettempdir(), filename)
         screenshot = pyscreenshot.grab()
         if screenshot:
             screenshot.save(path)
