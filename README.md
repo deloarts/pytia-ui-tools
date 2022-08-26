@@ -198,4 +198,4 @@ On a new revision, do the following:
 
 ## 5 to do
 
-- [ ] Make more to-dos
+Using VS Code [Comment Anchors](https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors) to keep track of to-dos.
