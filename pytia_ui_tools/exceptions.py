@@ -21,3 +21,7 @@ class PytiaUiToolsBaseError(Exception):
 
 class PytiaUiToolsOutsideWorkspaceError(PytiaUiToolsBaseError):
     """Exception for documents outside of the workspace."""
+
+
+class PytiaUiToolsFileTypeError(PytiaUiToolsBaseError):
+    """Exception for wrong file types."""
