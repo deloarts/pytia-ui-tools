@@ -3,7 +3,7 @@
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-Alpha-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.4.1-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/badge/Version-0.5.0-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -13,6 +13,14 @@ Helper functions and widgets for all pytia ui apps.
 > ⚠️ The layout of this app is heavily biased towards the workflow and needs of my companies' engineering team.
 >
 > 🔒 This is currently a private repo.
+
+Check out the pytia ecosystem:
+
+- [pytia](https://github.com/deloarts/pytia): The heart of this project.
+- [pytia-property-manager](https://github.com/deloarts/pytia-property-manager): An app to edit part and product properties.
+- [pytia-bounding-box](https://github.com/deloarts/pytia-bounding-box): An app to retrieve the bounding box of a part.
+- [pytia-bill-of-material](https://github.com/deloarts/pytia-bill-of-material): An app to retrieve the bill of material of a product.
+- [pytia-ui-tools](https://github.com/deloarts/pytia-ui-tools): A toolbox for all pytia apps.
 
 ## 1 installation
 
@@ -179,6 +187,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.5.0**: Add qr code functions.  
 **v0.4.1**: Add configure method to SnapScale.  
 **v0.4.0**: Add workspace handler.  
 **v0.3.1**: Fix ScrolledText widget.  
@@ -190,4 +199,4 @@ On a new revision, do the following:
 
 ## 5 to do
 
-- [ ] Make more to-dos
+Using VS Code [Comment Anchors](https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors) to keep track of to-dos.

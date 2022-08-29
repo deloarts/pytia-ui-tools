@@ -55,6 +55,7 @@ class Workspace:
                 found.
         &#34;&#34;&#34;
         self._model: WorkspaceModel
+        self._workspace_folder: Path | None = None
         self._path = path
         self._filename = filename
         self._allow_outside_workspace = allow_outside_workspace
@@ -68,6 +69,7 @@ class Workspace:
                     try:
                         self._model = WorkspaceModel.create(yaml.safe_load(f))
                         self._available = True
+                        self._workspace_folder = parent
                         log.info(f&#34;Loaded content from workspace file {f.name!r} &#34;)
                         return self._model
                     except yaml.YAMLError as e:
@@ -91,7 +93,12 @@ class Workspace:
     @property
     def available(self) -&gt; bool:
         &#34;&#34;&#34;Returns wether the workspace file is available or not.&#34;&#34;&#34;
-        return self._available</code></pre>
+        return self._available
+
+    @property
+    def workspace_folder(self) -&gt; Path | None:
+        &#34;&#34;&#34;Returns the folder in which the workspace file is saved.&#34;&#34;&#34;
+        return self._workspace_folder</code></pre>
 </details>
 </section>
 <section>
@@ -138,6 +145,7 @@ found.</dd>
                 found.
         &#34;&#34;&#34;
         self._model: WorkspaceModel
+        self._workspace_folder: Path | None = None
         self._path = path
         self._filename = filename
         self._allow_outside_workspace = allow_outside_workspace
@@ -151,6 +159,7 @@ found.</dd>
                     try:
                         self._model = WorkspaceModel.create(yaml.safe_load(f))
                         self._available = True
+                        self._workspace_folder = parent
                         log.info(f&#34;Loaded content from workspace file {f.name!r} &#34;)
                         return self._model
                     except yaml.YAMLError as e:
@@ -174,7 +183,12 @@ found.</dd>
     @property
     def available(self) -&gt; bool:
         &#34;&#34;&#34;Returns wether the workspace file is available or not.&#34;&#34;&#34;
-        return self._available</code></pre>
+        return self._available
+
+    @property
+    def workspace_folder(self) -&gt; Path | None:
+        &#34;&#34;&#34;Returns the folder in which the workspace file is saved.&#34;&#34;&#34;
+        return self._workspace_folder</code></pre>
 </details>
 <h3>Instance variables</h3>
 <dl>
@@ -204,6 +218,19 @@ def elements(self) -&gt; WorkspaceModel:
     return self._model</code></pre>
 </details>
 </dd>
+<dt id="pytia_ui_tools.handlers.workspace_handler.Workspace.workspace_folder"><code class="name">var <span class="ident">workspace_folder</span> : Optional[pathlib.Path]</code></dt>
+<dd>
+<div class="desc"><p>Returns the folder in which the workspace file is saved.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def workspace_folder(self) -&gt; Path | None:
+    &#34;&#34;&#34;Returns the folder in which the workspace file is saved.&#34;&#34;&#34;
+    return self._workspace_folder</code></pre>
+</details>
+</dd>
 </dl>
 <h3>Methods</h3>
 <dl>
@@ -224,6 +251,7 @@ def elements(self) -&gt; WorkspaceModel:
                 try:
                     self._model = WorkspaceModel.create(yaml.safe_load(f))
                     self._available = True
+                    self._workspace_folder = parent
                     log.info(f&#34;Loaded content from workspace file {f.name!r} &#34;)
                     return self._model
                 except yaml.YAMLError as e:
@@ -264,6 +292,7 @@ def elements(self) -&gt; WorkspaceModel:
 <li><code><a title="pytia_ui_tools.handlers.workspace_handler.Workspace.available" href="#pytia_ui_tools.handlers.workspace_handler.Workspace.available">available</a></code></li>
 <li><code><a title="pytia_ui_tools.handlers.workspace_handler.Workspace.elements" href="#pytia_ui_tools.handlers.workspace_handler.Workspace.elements">elements</a></code></li>
 <li><code><a title="pytia_ui_tools.handlers.workspace_handler.Workspace.read_yaml" href="#pytia_ui_tools.handlers.workspace_handler.Workspace.read_yaml">read_yaml</a></code></li>
+<li><code><a title="pytia_ui_tools.handlers.workspace_handler.Workspace.workspace_folder" href="#pytia_ui_tools.handlers.workspace_handler.Workspace.workspace_folder">workspace_folder</a></code></li>
 </ul>
 </li>
 </ul>

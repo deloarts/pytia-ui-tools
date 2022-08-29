@@ -21,6 +21,11 @@ class WorkspaceModel:
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
+    bom_name: Optional[str] = field(default=None)
+    bom_folder: Optional[str] = field(default=None)
+    docket_folder: Optional[str] = field(default=None)
+    stp_folder: Optional[str] = field(default=None)
+    stl_folder: Optional[str] = field(default=None)
 
     @classmethod
     def create(cls, data: dict) -> WorkspaceModel:

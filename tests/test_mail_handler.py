@@ -41,7 +41,7 @@ def test_send_mail_html():
         receiver=ts.mail,
         subject="TEST",
         body="<h1>HTML Body Test</h1>",
-        attachments=[tests_log],
+        attachments=[str(tests_log)],
     )
 
 

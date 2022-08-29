@@ -1,6 +1,7 @@
 import json
 import os
 from dataclasses import asdict, dataclass
+from pathlib import Path
 
 import validators
 
@@ -8,8 +9,8 @@ tests_folder = (
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace("/", os.sep)
     + "\\tests"
 )
-tests_settings = tests_folder + "\\tests.settings.json"
-tests_log = tests_folder + "\\tests.pytia_ui_tools.log"
+tests_settings = Path(tests_folder, "tests.settings.json")
+tests_log = Path(tests_folder, "tests.pytia_ui_tools.log")
 
 
 @dataclass

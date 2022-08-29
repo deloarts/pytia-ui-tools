@@ -49,7 +49,11 @@ class PytiaUiToolsBaseError(Exception):
 
 
 class PytiaUiToolsOutsideWorkspaceError(PytiaUiToolsBaseError):
-    &#34;&#34;&#34;Exception for documents outside of the workspace.&#34;&#34;&#34;</code></pre>
+    &#34;&#34;&#34;Exception for documents outside of the workspace.&#34;&#34;&#34;
+
+
+class PytiaUiToolsFileTypeError(PytiaUiToolsBaseError):
+    &#34;&#34;&#34;Exception for wrong file types.&#34;&#34;&#34;</code></pre>
 </details>
 </section>
 <section>
@@ -88,7 +92,28 @@ class PytiaUiToolsOutsideWorkspaceError(PytiaUiToolsBaseError):
 </ul>
 <h3>Subclasses</h3>
 <ul class="hlist">
+<li><a title="pytia_ui_tools.exceptions.PytiaUiToolsFileTypeError" href="#pytia_ui_tools.exceptions.PytiaUiToolsFileTypeError">PytiaUiToolsFileTypeError</a></li>
 <li><a title="pytia_ui_tools.exceptions.PytiaUiToolsOutsideWorkspaceError" href="#pytia_ui_tools.exceptions.PytiaUiToolsOutsideWorkspaceError">PytiaUiToolsOutsideWorkspaceError</a></li>
+</ul>
+</dd>
+<dt id="pytia_ui_tools.exceptions.PytiaUiToolsFileTypeError"><code class="flex name class">
+<span>class <span class="ident">PytiaUiToolsFileTypeError</span></span>
+<span>(</span><span>msg: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exception for wrong file types.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PytiaUiToolsFileTypeError(PytiaUiToolsBaseError):
+    &#34;&#34;&#34;Exception for wrong file types.&#34;&#34;&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pytia_ui_tools.exceptions.PytiaUiToolsBaseError" href="#pytia_ui_tools.exceptions.PytiaUiToolsBaseError">PytiaUiToolsBaseError</a></li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
 </ul>
 </dd>
 <dt id="pytia_ui_tools.exceptions.PytiaUiToolsOutsideWorkspaceError"><code class="flex name class">
@@ -129,6 +154,9 @@ class PytiaUiToolsOutsideWorkspaceError(PytiaUiToolsBaseError):
 <ul>
 <li>
 <h4><code><a title="pytia_ui_tools.exceptions.PytiaUiToolsBaseError" href="#pytia_ui_tools.exceptions.PytiaUiToolsBaseError">PytiaUiToolsBaseError</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pytia_ui_tools.exceptions.PytiaUiToolsFileTypeError" href="#pytia_ui_tools.exceptions.PytiaUiToolsFileTypeError">PytiaUiToolsFileTypeError</a></code></h4>
 </li>
 <li>
 <h4><code><a title="pytia_ui_tools.exceptions.PytiaUiToolsOutsideWorkspaceError" href="#pytia_ui_tools.exceptions.PytiaUiToolsOutsideWorkspaceError">PytiaUiToolsOutsideWorkspaceError</a></code></h4>

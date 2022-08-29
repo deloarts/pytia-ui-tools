@@ -50,6 +50,11 @@ class WorkspaceModel:
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
+    bom_name: Optional[str] = field(default=None)
+    bom_folder: Optional[str] = field(default=None)
+    docket_folder: Optional[str] = field(default=None)
+    stp_folder: Optional[str] = field(default=None)
+    stl_folder: Optional[str] = field(default=None)
 
     @classmethod
     def create(cls, data: dict) -&gt; WorkspaceModel:
@@ -73,7 +78,7 @@ class WorkspaceModel:
 <dl>
 <dt id="pytia_ui_tools.models.workspace.WorkspaceModel"><code class="flex name class">
 <span>class <span class="ident">WorkspaceModel</span></span>
-<span>(</span><span>title: Optional[str] = None, active: Optional[bool] = True, customer: Optional[str] = None, description: Optional[str] = None, machine: Optional[str] = None, projects: Optional[List[str]] = &lt;factory&gt;, responsible: Optional[str] = None, delegate: Optional[str] = None, editors: Optional[List[str]] = &lt;factory&gt;)</span>
+<span>(</span><span>title: Optional[str] = None, active: Optional[bool] = True, customer: Optional[str] = None, description: Optional[str] = None, machine: Optional[str] = None, projects: Optional[List[str]] = &lt;factory&gt;, responsible: Optional[str] = None, delegate: Optional[str] = None, editors: Optional[List[str]] = &lt;factory&gt;, bom_name: Optional[str] = None, bom_folder: Optional[str] = None, docket_folder: Optional[str] = None, stp_folder: Optional[str] = None, stl_folder: Optional[str] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Workspace model data class.</p></div>
@@ -94,6 +99,11 @@ class WorkspaceModel:
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
+    bom_name: Optional[str] = field(default=None)
+    bom_folder: Optional[str] = field(default=None)
+    docket_folder: Optional[str] = field(default=None)
+    stp_folder: Optional[str] = field(default=None)
+    stl_folder: Optional[str] = field(default=None)
 
     @classmethod
     def create(cls, data: dict) -&gt; WorkspaceModel:
@@ -111,6 +121,14 @@ class WorkspaceModel:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="pytia_ui_tools.models.workspace.WorkspaceModel.bom_folder"><code class="name">var <span class="ident">bom_folder</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pytia_ui_tools.models.workspace.WorkspaceModel.bom_name"><code class="name">var <span class="ident">bom_name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="pytia_ui_tools.models.workspace.WorkspaceModel.customer"><code class="name">var <span class="ident">customer</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"></div>
@@ -120,6 +138,10 @@ class WorkspaceModel:
 <div class="desc"></div>
 </dd>
 <dt id="pytia_ui_tools.models.workspace.WorkspaceModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pytia_ui_tools.models.workspace.WorkspaceModel.docket_folder"><code class="name">var <span class="ident">docket_folder</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -136,6 +158,14 @@ class WorkspaceModel:
 <div class="desc"></div>
 </dd>
 <dt id="pytia_ui_tools.models.workspace.WorkspaceModel.responsible"><code class="name">var <span class="ident">responsible</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pytia_ui_tools.models.workspace.WorkspaceModel.stl_folder"><code class="name">var <span class="ident">stl_folder</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pytia_ui_tools.models.workspace.WorkspaceModel.stp_folder"><code class="name">var <span class="ident">stp_folder</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -189,14 +219,19 @@ def create(cls, data: dict) -&gt; WorkspaceModel:
 <h4><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel" href="#pytia_ui_tools.models.workspace.WorkspaceModel">WorkspaceModel</a></code></h4>
 <ul class="two-column">
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.active" href="#pytia_ui_tools.models.workspace.WorkspaceModel.active">active</a></code></li>
+<li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.bom_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.bom_folder">bom_folder</a></code></li>
+<li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.bom_name" href="#pytia_ui_tools.models.workspace.WorkspaceModel.bom_name">bom_name</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.create" href="#pytia_ui_tools.models.workspace.WorkspaceModel.create">create</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.customer" href="#pytia_ui_tools.models.workspace.WorkspaceModel.customer">customer</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.delegate" href="#pytia_ui_tools.models.workspace.WorkspaceModel.delegate">delegate</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.description" href="#pytia_ui_tools.models.workspace.WorkspaceModel.description">description</a></code></li>
+<li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.docket_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.docket_folder">docket_folder</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.editors" href="#pytia_ui_tools.models.workspace.WorkspaceModel.editors">editors</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.machine" href="#pytia_ui_tools.models.workspace.WorkspaceModel.machine">machine</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.projects" href="#pytia_ui_tools.models.workspace.WorkspaceModel.projects">projects</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.responsible" href="#pytia_ui_tools.models.workspace.WorkspaceModel.responsible">responsible</a></code></li>
+<li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.stl_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.stl_folder">stl_folder</a></code></li>
+<li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.stp_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.stp_folder">stp_folder</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.title" href="#pytia_ui_tools.models.workspace.WorkspaceModel.title">title</a></code></li>
 </ul>
 </li>
