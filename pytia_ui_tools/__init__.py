@@ -8,4 +8,4 @@
     https://github.com/deloarts/pytia-ui-tools
 """
 
-__version__ = "0.4.1"
+__version__ = "0.5.0"
