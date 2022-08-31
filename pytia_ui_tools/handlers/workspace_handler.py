@@ -36,7 +36,7 @@ class Workspace:
         """Reads the yaml workspace file."""
         for parent in Path(self._path).parents:
             if os.path.isfile((ws_file := Path(parent, self._filename))):
-                with open(ws_file, "r") as f:
+                with open(ws_file, "rt", encoding="utf-8") as f:
                     try:
                         self._model = WorkspaceModel.create(yaml.safe_load(f))
                         self._available = True
