@@ -62,10 +62,10 @@ class Workspace:
         self._available = False
 
     def read_yaml(self) -&gt; WorkspaceModel:
-        &#34;&#34;&#34;Reads the yaml workspace file.&#34;&#34;&#34;
+        &#34;&#34;&#34;Reads the yaml workspace file. Encoding utf-8.&#34;&#34;&#34;
         for parent in Path(self._path).parents:
             if os.path.isfile((ws_file := Path(parent, self._filename))):
-                with open(ws_file, &#34;r&#34;) as f:
+                with open(ws_file, &#34;rt&#34;, encoding=&#34;utf-8&#34;) as f:
                     try:
                         self._model = WorkspaceModel.create(yaml.safe_load(f))
                         self._available = True
@@ -152,10 +152,10 @@ found.</dd>
         self._available = False
 
     def read_yaml(self) -&gt; WorkspaceModel:
-        &#34;&#34;&#34;Reads the yaml workspace file.&#34;&#34;&#34;
+        &#34;&#34;&#34;Reads the yaml workspace file. Encoding utf-8.&#34;&#34;&#34;
         for parent in Path(self._path).parents:
             if os.path.isfile((ws_file := Path(parent, self._filename))):
-                with open(ws_file, &#34;r&#34;) as f:
+                with open(ws_file, &#34;rt&#34;, encoding=&#34;utf-8&#34;) as f:
                     try:
                         self._model = WorkspaceModel.create(yaml.safe_load(f))
                         self._available = True
@@ -238,16 +238,16 @@ def workspace_folder(self) -&gt; Path | None:
 <span>def <span class="ident">read_yaml</span></span>(<span>self) ‑> <a title="pytia_ui_tools.models.workspace.WorkspaceModel" href="../models/workspace.html#pytia_ui_tools.models.workspace.WorkspaceModel">WorkspaceModel</a></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Reads the yaml workspace file.</p></div>
+<div class="desc"><p>Reads the yaml workspace file. Encoding utf-8.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def read_yaml(self) -&gt; WorkspaceModel:
-    &#34;&#34;&#34;Reads the yaml workspace file.&#34;&#34;&#34;
+    &#34;&#34;&#34;Reads the yaml workspace file. Encoding utf-8.&#34;&#34;&#34;
     for parent in Path(self._path).parents:
         if os.path.isfile((ws_file := Path(parent, self._filename))):
-            with open(ws_file, &#34;r&#34;) as f:
+            with open(ws_file, &#34;rt&#34;, encoding=&#34;utf-8&#34;) as f:
                 try:
                     self._model = WorkspaceModel.create(yaml.safe_load(f))
                     self._available = True

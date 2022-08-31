@@ -1,4 +1,4 @@
-astroid==2.12.4; python_full_version >= "3.7.2"
+astroid==2.12.5; python_full_version >= "3.7.2"
 atomicwrites==1.4.1; python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.4.0"
 attrs==22.1.0; python_version >= "3.7"
 black==22.6.0; python_full_version >= "3.6.2" \
@@ -99,9 +99,7 @@ lazy-object-proxy==1.7.1; python_version >= "3.6" and python_full_version >= "3.
     --hash=sha256:2130db8ed69a48a3440103d4a520b89d8a9405f1b06e2cc81640509e8bf6548f \
     --hash=sha256:677ea950bef409b47e51e733283544ac3d660b709cfce7b187f5ace137960d61 \
     --hash=sha256:d66906d5785da8e0be7360912e99c9188b70f52c422f9fc18223347235691a84
-mako==1.2.1; python_version >= "3.7" \
-    --hash=sha256:df3921c3081b013c8a2d5ff03c18375651684921ae83fd12e64800b7da923257 \
-    --hash=sha256:f054a5ff4743492f1aa9ecc47172cb33b42b9d993cffcc146c9de17e717b0307
+mako==1.2.2; python_version >= "3.7"
 markdown==3.4.1; python_version >= "3.7"
 markupsafe==2.1.1; python_version >= "3.7" \
     --hash=sha256:86b1f75c4e7c2ac2ccdaec2b9022845dbb81880ca318bb7a0a01fbf7813e3812 \
@@ -159,9 +157,7 @@ nodeenv==1.7.0; python_version >= "3.7" and python_full_version < "3.0.0" or pyt
 packaging==21.3; python_version >= "3.7" \
     --hash=sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522 \
     --hash=sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
-pathspec==0.9.0; python_full_version >= "3.6.2" \
-    --hash=sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a \
-    --hash=sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1
+pathspec==0.10.0; python_version >= "3.7" and python_full_version >= "3.6.2"
 pdoc3==0.10.0; python_version >= "3.6" \
     --hash=sha256:ba45d1ada1bd987427d2bf5cdec30b2631a3ff5fb01f6d0e77648a572ce6028b \
     --hash=sha256:5f22e7bcb969006738e1aa4219c75a32f34c2d62d46dc9d2fb2d3e0b0287e4b7
@@ -283,7 +279,7 @@ tomli==2.0.1; python_full_version < "3.11.0a7" and python_full_version >= "3.7.2
 tomlkit==0.11.4; python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.7.2"
 validators==0.19.0; python_version >= "3.4" \
     --hash=sha256:dec45f4381f042f1e705cfa74949505b77f1e27e8b05409096fee8152c839cbe
-virtualenv==20.16.3; python_version >= "3.7"
+virtualenv==20.16.4; python_version >= "3.7"
 wrapt==1.14.1 \
     --hash=sha256:1b376b3f4896e7930f1f772ac4b064ac12598d1c38d04907e696cc4d794b43d3 \
     --hash=sha256:903500616422a40a98a5a3c4ff4ed9d0066f3b4c951fa286018ecdf0750194ef \
