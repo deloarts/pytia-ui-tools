@@ -45,7 +45,7 @@ class MailHandler:
         """
         try:
             app = Dispatch("outlook.application")
-            return app
+            return app  # type: ignore
         except COMException as e:
             log.warning(f"Outlook is not installed on this system: {e}")
             return None
