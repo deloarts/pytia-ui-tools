@@ -74,7 +74,7 @@ class MailHandler:
         &#34;&#34;&#34;
         try:
             app = Dispatch(&#34;outlook.application&#34;)
-            return app
+            return app  # type: ignore
         except COMException as e:
             log.warning(f&#34;Outlook is not installed on this system: {e}&#34;)
             return None
@@ -258,7 +258,7 @@ class MailHandler:
         &#34;&#34;&#34;
         try:
             app = Dispatch(&#34;outlook.application&#34;)
-            return app
+            return app  # type: ignore
         except COMException as e:
             log.warning(f&#34;Outlook is not installed on this system: {e}&#34;)
             return None

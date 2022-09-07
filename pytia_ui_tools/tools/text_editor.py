@@ -61,7 +61,7 @@ class TextEditor(Toplevel):
         self.frame_footer.grid_columnconfigure(0, weight=1)
 
         self.text_widget = scrolledtext.ScrolledText(
-            self.frame_data, font=("Segoe UI", 9)
+            self.frame_data, font=("Segoe UI", 9), wrap=tk.WORD
         )
         self.text_widget.grid(row=0, column=0, sticky="nsew")
         self.text_widget.focus_set()
@@ -83,6 +83,8 @@ class TextEditor(Toplevel):
             style="Footer.TButton",
         )
         self.btn_abort.grid(row=0, column=1, padx=(2, 0), pady=0, sticky="e")
+
+        self.bind("<Escape>", lambda _: self.on_btn_abort())
 
         self.update()
         self.grab_set()

@@ -15,12 +15,14 @@ from pytia_ui_tools.models.workspace import WorkspaceModel
 class Workspace:
     """Handler for workspaces."""
 
-    def __init__(self, path: str, filename: str, allow_outside_workspace: bool) -> None:
+    def __init__(
+        self, path: Path, filename: str, allow_outside_workspace: bool
+    ) -> None:
         """
         Inits the workspace handler class.
 
         Args:
-            path (str): The path from which to search for the workspace file (upwards).
+            path (Path): The path from which to search for the workspace file (upwards).
             filename (str): The workspace filename to search for.
             allow_outside_workspace (bool): Raises an exception if the workspace file cannot be \
                 found.
