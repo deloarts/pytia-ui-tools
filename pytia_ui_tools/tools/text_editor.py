@@ -84,6 +84,8 @@ class TextEditor(Toplevel):
         )
         self.btn_abort.grid(row=0, column=1, padx=(2, 0), pady=0, sticky="e")
 
+        self.bind("<Escape>", lambda _: self.on_btn_abort())
+
         self.update()
         self.grab_set()
 
