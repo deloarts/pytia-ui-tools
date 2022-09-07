@@ -90,7 +90,7 @@ class TextEditor(Toplevel):
         self.frame_footer.grid_columnconfigure(0, weight=1)
 
         self.text_widget = scrolledtext.ScrolledText(
-            self.frame_data, font=(&#34;Segoe UI&#34;, 9)
+            self.frame_data, font=(&#34;Segoe UI&#34;, 9), wrap=tk.WORD
         )
         self.text_widget.grid(row=0, column=0, sticky=&#34;nsew&#34;)
         self.text_widget.focus_set()
@@ -112,6 +112,8 @@ class TextEditor(Toplevel):
             style=&#34;Footer.TButton&#34;,
         )
         self.btn_abort.grid(row=0, column=1, padx=(2, 0), pady=0, sticky=&#34;e&#34;)
+
+        self.bind(&#34;&lt;Escape&gt;&#34;, lambda _: self.on_btn_abort())
 
         self.update()
         self.grab_set()
@@ -221,7 +223,7 @@ class TextEditor(Toplevel):
         self.frame_footer.grid_columnconfigure(0, weight=1)
 
         self.text_widget = scrolledtext.ScrolledText(
-            self.frame_data, font=(&#34;Segoe UI&#34;, 9)
+            self.frame_data, font=(&#34;Segoe UI&#34;, 9), wrap=tk.WORD
         )
         self.text_widget.grid(row=0, column=0, sticky=&#34;nsew&#34;)
         self.text_widget.focus_set()
@@ -243,6 +245,8 @@ class TextEditor(Toplevel):
             style=&#34;Footer.TButton&#34;,
         )
         self.btn_abort.grid(row=0, column=1, padx=(2, 0), pady=0, sticky=&#34;e&#34;)
+
+        self.bind(&#34;&lt;Escape&gt;&#34;, lambda _: self.on_btn_abort())
 
         self.update()
         self.grab_set()

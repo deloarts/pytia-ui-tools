@@ -44,12 +44,14 @@ from pytia_ui_tools.models.workspace import WorkspaceModel
 class Workspace:
     &#34;&#34;&#34;Handler for workspaces.&#34;&#34;&#34;
 
-    def __init__(self, path: str, filename: str, allow_outside_workspace: bool) -&gt; None:
+    def __init__(
+        self, path: Path, filename: str, allow_outside_workspace: bool
+    ) -&gt; None:
         &#34;&#34;&#34;
         Inits the workspace handler class.
 
         Args:
-            path (str): The path from which to search for the workspace file (upwards).
+            path (Path): The path from which to search for the workspace file (upwards).
             filename (str): The workspace filename to search for.
             allow_outside_workspace (bool): Raises an exception if the workspace file cannot be \
                 found.
@@ -112,14 +114,14 @@ class Workspace:
 <dl>
 <dt id="pytia_ui_tools.handlers.workspace_handler.Workspace"><code class="flex name class">
 <span>class <span class="ident">Workspace</span></span>
-<span>(</span><span>path: str, filename: str, allow_outside_workspace: bool)</span>
+<span>(</span><span>path: pathlib.Path, filename: str, allow_outside_workspace: bool)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Handler for workspaces.</p>
 <p>Inits the workspace handler class.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dt><strong><code>path</code></strong> :&ensp;<code>Path</code></dt>
 <dd>The path from which to search for the workspace file (upwards).</dd>
 <dt><strong><code>filename</code></strong> :&ensp;<code>str</code></dt>
 <dd>The workspace filename to search for.</dd>
@@ -134,12 +136,14 @@ found.</dd>
 <pre><code class="python">class Workspace:
     &#34;&#34;&#34;Handler for workspaces.&#34;&#34;&#34;
 
-    def __init__(self, path: str, filename: str, allow_outside_workspace: bool) -&gt; None:
+    def __init__(
+        self, path: Path, filename: str, allow_outside_workspace: bool
+    ) -&gt; None:
         &#34;&#34;&#34;
         Inits the workspace handler class.
 
         Args:
-            path (str): The path from which to search for the workspace file (upwards).
+            path (Path): The path from which to search for the workspace file (upwards).
             filename (str): The workspace filename to search for.
             allow_outside_workspace (bool): Raises an exception if the workspace file cannot be \
                 found.
