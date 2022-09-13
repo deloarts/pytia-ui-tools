@@ -1,4 +1,4 @@
-astroid==2.12.8; python_full_version >= "3.7.2"
+astroid==2.12.9; python_full_version >= "3.7.2"
 attrs==22.1.0; python_version >= "3.7"
 black==22.8.0; python_full_version >= "3.6.2"
 cfgv==3.3.1; python_full_version >= "3.6.1" and python_version >= "3.7" \
@@ -186,7 +186,7 @@ pre-commit==2.20.0; python_version >= "3.7"
 py==1.11.0; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.7" \
     --hash=sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378 \
     --hash=sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719
-pylint==2.15.0; python_full_version >= "3.7.2"
+pylint==2.15.2; python_full_version >= "3.7.2"
 pyparsing==3.0.9; python_full_version >= "3.6.8" and python_version >= "3.7" \
     --hash=sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc \
     --hash=sha256:2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb
@@ -253,7 +253,7 @@ tomli==2.0.1; python_full_version < "3.11.0a7" and python_full_version >= "3.7.2
 tomlkit==0.11.4; python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.7.2"
 validators==0.19.0; python_version >= "3.4" \
     --hash=sha256:dec45f4381f042f1e705cfa74949505b77f1e27e8b05409096fee8152c839cbe
-virtualenv==20.16.4; python_version >= "3.7"
+virtualenv==20.16.5; python_version >= "3.7"
 wrapt==1.14.1 \
     --hash=sha256:1b376b3f4896e7930f1f772ac4b064ac12598d1c38d04907e696cc4d794b43d3 \
     --hash=sha256:903500616422a40a98a5a3c4ff4ed9d0066f3b4c951fa286018ecdf0750194ef \

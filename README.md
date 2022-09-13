@@ -3,7 +3,7 @@
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-Alpha-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.5.2-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/badge/Version-0.5.3-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -187,6 +187,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.5.3**: Add drawing export folder to workspace model.  
 **v0.5.2**: Improve text editor.  
 **v0.5.1**: Fix workspace encoding.  
 **v0.5.0**: Add qr code functions.  
