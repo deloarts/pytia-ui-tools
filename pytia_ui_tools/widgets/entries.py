@@ -13,7 +13,7 @@ class NumberEntry(ttk.Entry):
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame,
+        master: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe,
         string_var: StringVar,
         replace_comma: bool = True,
         **kwargs,
