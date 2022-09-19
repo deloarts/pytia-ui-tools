@@ -42,7 +42,7 @@ class NumberEntry(ttk.Entry):
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame,
+        master: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe,
         string_var: StringVar,
         replace_comma: bool = True,
         **kwargs,
@@ -77,7 +77,7 @@ class NumberEntry(ttk.Entry):
 <dl>
 <dt id="pytia_ui_tools.widgets.entries.NumberEntry"><code class="flex name class">
 <span>class <span class="ident">NumberEntry</span></span>
-<span>(</span><span>master: tkinter.Tk | tkinter.Frame | tkinter.ttk.Frame, string_var: tkinter.StringVar, replace_comma: bool = True, **kwargs)</span>
+<span>(</span><span>master: tkinter.Tk | tkinter.Frame | tkinter.ttk.Frame | tkinter.ttk.Labelframe, string_var: tkinter.StringVar, replace_comma: bool = True, **kwargs)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Entry subclass widget that only accepts digits and a floating point.</p>
@@ -100,7 +100,7 @@ class NumberEntry(ttk.Entry):
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame,
+        master: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe,
         string_var: StringVar,
         replace_comma: bool = True,
         **kwargs,

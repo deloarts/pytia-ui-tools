@@ -1,4 +1,4 @@
-astroid==2.12.9; python_full_version >= "3.7.2"
+astroid==2.12.10; python_full_version >= "3.7.2"
 attrs==22.1.0; python_version >= "3.7"
 black==22.8.0; python_full_version >= "3.6.2"
 cfgv==3.3.1; python_full_version >= "3.6.1" and python_version >= "3.7" \
