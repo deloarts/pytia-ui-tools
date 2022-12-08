@@ -22,6 +22,32 @@ Check out the pytia ecosystem:
 - [pytia-bill-of-material](https://github.com/deloarts/pytia-bill-of-material): An app to retrieve the bill of material of a product.
 - [pytia-ui-tools](https://github.com/deloarts/pytia-ui-tools): A toolbox for all pytia apps.
 
+Table of contents:
+
+- [pytia ui tools](#pytia-ui-tools)
+  - [1 installation](#1-installation)
+    - [1.1 system requirements](#11-system-requirements)
+    - [1.2 pip](#12-pip)
+      - [1.2.1 access token](#121-access-token)
+      - [1.2.2 ssh](#122-ssh)
+  - [2 developing](#2-developing)
+    - [2.1 repository](#21-repository)
+      - [2.1.1 cloning](#211-cloning)
+      - [2.1.2 main branch protection](#212-main-branch-protection)
+      - [2.1.3 branch naming convention](#213-branch-naming-convention)
+      - [2.1.4 issues](#214-issues)
+    - [2.2 poetry](#22-poetry)
+      - [2.2.1 setup](#221-setup)
+      - [2.2.2 install](#222-install)
+    - [2.2.3 tests](#223-tests)
+      - [2.2.4 build](#224-build)
+    - [2.3 pre-commit hooks](#23-pre-commit-hooks)
+    - [2.4 docs](#24-docs)
+    - [2.5 new revision checklist](#25-new-revision-checklist)
+  - [3 license](#3-license)
+  - [4 changelog](#4-changelog)
+  - [5 to do](#5-to-do)
+
 ## 1 installation
 
 ### 1.1 system requirements
