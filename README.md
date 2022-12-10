@@ -3,7 +3,7 @@
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-Alpha-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.6.2-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/badge/Version-0.6.3-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -18,9 +18,37 @@ Check out the pytia ecosystem:
 
 - [pytia](https://github.com/deloarts/pytia): The heart of this project.
 - [pytia-property-manager](https://github.com/deloarts/pytia-property-manager): An app to edit part and product properties.
-- [pytia-bounding-box](https://github.com/deloarts/pytia-bounding-box): An app to retrieve the bounding box of a part.
-- [pytia-bill-of-material](https://github.com/deloarts/pytia-bill-of-material): An app to retrieve the bill of material of a product.
+- [pytia-bounding-box](https://github.com/deloarts/pytia-bounding-box): For retrieving the bounding box of a part.
+- [pytia-bill-of-material](https://github.com/deloarts/pytia-bill-of-material): Exports the bill of material and data of a product.
+- [pytia-title-block](https://github.com/deloarts/pytia-title-block): An app to edit a drawing's title block.
+- [pytia-quick-export](https://github.com/deloarts/pytia-quick-export): Single file export with useful features.
 - [pytia-ui-tools](https://github.com/deloarts/pytia-ui-tools): A toolbox for all pytia apps.
+
+Table of contents:
+
+- [pytia ui tools](#pytia-ui-tools)
+  - [1 installation](#1-installation)
+    - [1.1 system requirements](#11-system-requirements)
+    - [1.2 pip](#12-pip)
+      - [1.2.1 access token](#121-access-token)
+      - [1.2.2 ssh](#122-ssh)
+  - [2 developing](#2-developing)
+    - [2.1 repository](#21-repository)
+      - [2.1.1 cloning](#211-cloning)
+      - [2.1.2 main branch protection](#212-main-branch-protection)
+      - [2.1.3 branch naming convention](#213-branch-naming-convention)
+      - [2.1.4 issues](#214-issues)
+    - [2.2 poetry](#22-poetry)
+      - [2.2.1 setup](#221-setup)
+      - [2.2.2 install](#222-install)
+    - [2.2.3 tests](#223-tests)
+      - [2.2.4 build](#224-build)
+    - [2.3 pre-commit hooks](#23-pre-commit-hooks)
+    - [2.4 docs](#24-docs)
+    - [2.5 new revision checklist](#25-new-revision-checklist)
+  - [3 license](#3-license)
+  - [4 changelog](#4-changelog)
+  - [5 to do](#5-to-do)
 
 ## 1 installation
 
@@ -71,9 +99,9 @@ For developing you would, additionally to the system requirements, need to insta
 - [Poetry](https://python-poetry.org/docs/master/#installation)
 - [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
 
-> ❗️ Never develop new features and fixes in the main branch!
+### 2.1 repository
 
-### 2.1 clone the repo
+#### 2.1.1 cloning
 
 Clone the repo to your local machine:
 
@@ -85,6 +113,33 @@ git clone git@github.com:deloarts/pytia-ui-tools.git
 ```
 
 Or use GitHub Desktop.
+
+#### 2.1.2 main branch protection
+
+> ❗️ Never develop new features and fixes in the main branch!
+
+The main branch is protected: it's not allowed to make changes directly to it. Create a new branch in order work on issues. The new branch should follow the naming convention from below.
+
+#### 2.1.3 branch naming convention
+
+1. Use grouping tokens at the beginning of your branch names, such as:
+    - feature: A new feature that will be added to the project
+    - fix: For bugfixes
+    - tests: Adding or updating tests
+    - docs: For updating the docs
+    - wip: Work in progress, won't be finished soon
+    - junk: Just for experimenting
+2. Use slashes `/` as delimiter in branch names (`feature/docket-export`)
+3. Avoid long descriptive names, rather refer to an issue
+4. Do not use bare numbers as leading parts (`fix/108` is bad, `fix/issue108` is good)
+
+#### 2.1.4 issues
+
+Use the issue templates for creating an issue. Please don't open a new issue if you haven't met the requirements and add as much information as possible. Further:
+
+- Format your code in an issue correctly with three backticks, see the [markdown guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+- Add the full error trace.
+- Do not add screenshots for code or traces.
 
 ### 2.2 poetry
 
@@ -187,6 +242,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.6.3**: Bump pillow to 9.3.0.  
 **v0.6.2**: Update deps due to vulnerability issue.  
 **v0.6.1**: Remove dependency py.  
 **v0.6.0**: Add file utility.  
