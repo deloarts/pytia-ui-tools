@@ -11,8 +11,6 @@ Helper functions and widgets for all pytia ui apps.
 > ✏️ This package only provides helper functions, widgets and some other stuff for all pytia ui apps. This package is therefore a required dependency for almost all pytia apps, but does nothing on its own.
 >
 > ⚠️ The layout of this app is heavily biased towards the workflow and needs of my companies' engineering team.
->
-> 🔒 This is currently a private repo.
 
 Check out the pytia ecosystem:
 
@@ -30,7 +28,7 @@ Table of contents:
   - [1 installation](#1-installation)
     - [1.1 system requirements](#11-system-requirements)
     - [1.2 pip](#12-pip)
-      - [1.2.1 access token](#121-access-token)
+      - [1.2.1 pip from wheel](#121-pip-from-wheel)
       - [1.2.2 ssh](#122-ssh)
   - [2 developing](#2-developing)
     - [2.1 repository](#21-repository)
@@ -60,18 +58,17 @@ Table of contents:
 
 ### 1.2 pip
 
-To pip-install this module you need to have access to this repo (which you obviously have if you can read this README). You then have two options:
+PYTIA isn't available on PyPi, but you still can install it via pip. Here are two options, choose the one you like best:
 
-#### 1.2.1 access token
+#### 1.2.1 pip from wheel
 
-Create a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for pip'ing it.
+If you want to install PYTIA-UI-TOOLS from the published wheel file, use:
 
 ```powershell
-python -m pip install git+https://${GITHUB_TOKEN}@github.com/deloarts/pytia-ui-tools.git{VERSION}
+python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.6.3/pytia_ui_tools-0.6.3-py3-none-any.whl
 ```
 
-Use your access token instead of *GITHUB_TOKEN*.
-You can omit the *VERSION*-tag if you want to install the latest version.
+This command installs PYTIA-UI-TOOLS v0.6.3.
 
 #### 1.2.2 ssh
 
@@ -85,11 +82,13 @@ ssh -T git@github.com
 python -m pip install git+ssh://git@github.com/deloarts/pytia-ui-tools.git
 ```
 
+This command installs the latest stable version of PYTIA-UI-TOOLS.
+
 If you're using poetry add this to you **pyproject.toml** file:
 
 ```toml
 [tool.poetry.dependencies]
-pytia-ui-tools = { git = "ssh://git@github.com/deloarts/pytia-ui-tools.git", branch="main" }
+pytia = { git = "ssh://git@github.com/deloarts/pytia-ui-tools.git", branch="main" }
 ```
 
 ## 2 developing
