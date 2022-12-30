@@ -2,7 +2,7 @@
 
 Helper functions and widgets for all pytia ui apps.
 
-![state](https://img.shields.io/badge/State-Alpha-brown.svg?style=for-the-badge)
+![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
 ![version](https://img.shields.io/badge/Version-0.6.3-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
