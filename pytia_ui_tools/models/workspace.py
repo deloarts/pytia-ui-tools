@@ -27,6 +27,7 @@ class WorkspaceModel:
     drawing_folder: Optional[str] = field(default=None)
     stp_folder: Optional[str] = field(default=None)
     stl_folder: Optional[str] = field(default=None)
+    png_folder: Optional[str] = field(default=None)
 
     @classmethod
     def create(cls, data: dict) -> WorkspaceModel:
