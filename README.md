@@ -3,7 +3,7 @@
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.6.4-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/badge/Version-0.6.5-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -65,10 +65,10 @@ PYTIA isn't available on PyPi, but you still can install it via pip. Here are tw
 If you want to install PYTIA-UI-TOOLS from the published wheel file, use:
 
 ```powershell
-python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.6.4/pytia_ui_tools-0.6.4-py3-none-any.whl
+python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.6.5/pytia_ui_tools-0.6.5-py3-none-any.whl
 ```
 
-This command installs PYTIA-UI-TOOLS v0.6.4.
+This command installs PYTIA-UI-TOOLS v0.6.5.
 
 #### 1.2.2 ssh
 
@@ -241,6 +241,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.6.5**: Add groups to workspace model.  
 **v0.6.4**: Add png folder to workspace model.  
 **v0.6.3**: Bump pillow to 9.3.0.  
 **v0.6.2**: Update deps due to vulnerability issue.  
