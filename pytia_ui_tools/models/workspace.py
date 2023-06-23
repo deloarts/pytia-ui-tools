@@ -18,6 +18,7 @@ class WorkspaceModel:
     description: Optional[str] = field(default=None)
     machine: Optional[str] = field(default=None)
     projects: Optional[List[str]] = field(default_factory=lambda: [])
+    groups: Optional[List[str]] = field(default_factory=lambda: [])
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
