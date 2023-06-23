@@ -18,6 +18,7 @@ class WorkspaceModel:
     description: Optional[str] = field(default=None)
     machine: Optional[str] = field(default=None)
     projects: Optional[List[str]] = field(default_factory=lambda: [])
+    groups: Optional[List[str]] = field(default_factory=lambda: [])
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
@@ -27,7 +28,7 @@ class WorkspaceModel:
     drawing_folder: Optional[str] = field(default=None)
     stp_folder: Optional[str] = field(default=None)
     stl_folder: Optional[str] = field(default=None)
-    png_folder: Optional[str] = field(default=None)
+    image_folder: Optional[str] = field(default=None)
 
     @classmethod
     def create(cls, data: dict) -> WorkspaceModel:
