@@ -47,6 +47,7 @@ class WorkspaceModel:
     description: Optional[str] = field(default=None)
     machine: Optional[str] = field(default=None)
     projects: Optional[List[str]] = field(default_factory=lambda: [])
+    groups: Optional[List[str]] = field(default_factory=lambda: [])
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
@@ -80,7 +81,7 @@ class WorkspaceModel:
 <dl>
 <dt id="pytia_ui_tools.models.workspace.WorkspaceModel"><code class="flex name class">
 <span>class <span class="ident">WorkspaceModel</span></span>
-<span>(</span><span>title: Optional[str] = None, active: Optional[bool] = True, customer: Optional[str] = None, description: Optional[str] = None, machine: Optional[str] = None, projects: Optional[List[str]] = &lt;factory&gt;, responsible: Optional[str] = None, delegate: Optional[str] = None, editors: Optional[List[str]] = &lt;factory&gt;, bom_name: Optional[str] = None, bom_folder: Optional[str] = None, docket_folder: Optional[str] = None, drawing_folder: Optional[str] = None, stp_folder: Optional[str] = None, stl_folder: Optional[str] = None, image_folder: Optional[str] = None)</span>
+<span>(</span><span>title: Optional[str] = None, active: Optional[bool] = True, customer: Optional[str] = None, description: Optional[str] = None, machine: Optional[str] = None, projects: Optional[List[str]] = &lt;factory&gt;, groups: Optional[List[str]] = &lt;factory&gt;, responsible: Optional[str] = None, delegate: Optional[str] = None, editors: Optional[List[str]] = &lt;factory&gt;, bom_name: Optional[str] = None, bom_folder: Optional[str] = None, docket_folder: Optional[str] = None, drawing_folder: Optional[str] = None, stp_folder: Optional[str] = None, stl_folder: Optional[str] = None, image_folder: Optional[str] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Workspace model data class.</p></div>
@@ -98,6 +99,7 @@ class WorkspaceModel:
     description: Optional[str] = field(default=None)
     machine: Optional[str] = field(default=None)
     projects: Optional[List[str]] = field(default_factory=lambda: [])
+    groups: Optional[List[str]] = field(default_factory=lambda: [])
     responsible: Optional[str] = field(default=None)
     delegate: Optional[str] = field(default=None)
     editors: Optional[List[str]] = field(default_factory=lambda: [])
@@ -154,6 +156,10 @@ class WorkspaceModel:
 <div class="desc"></div>
 </dd>
 <dt id="pytia_ui_tools.models.workspace.WorkspaceModel.editors"><code class="name">var <span class="ident">editors</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="pytia_ui_tools.models.workspace.WorkspaceModel.groups"><code class="name">var <span class="ident">groups</span> : Optional[List[str]]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -240,6 +246,7 @@ def create(cls, data: dict) -&gt; WorkspaceModel:
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.docket_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.docket_folder">docket_folder</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.drawing_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.drawing_folder">drawing_folder</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.editors" href="#pytia_ui_tools.models.workspace.WorkspaceModel.editors">editors</a></code></li>
+<li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.groups" href="#pytia_ui_tools.models.workspace.WorkspaceModel.groups">groups</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.image_folder" href="#pytia_ui_tools.models.workspace.WorkspaceModel.image_folder">image_folder</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.machine" href="#pytia_ui_tools.models.workspace.WorkspaceModel.machine">machine</a></code></li>
 <li><code><a title="pytia_ui_tools.models.workspace.WorkspaceModel.projects" href="#pytia_ui_tools.models.workspace.WorkspaceModel.projects">projects</a></code></li>
