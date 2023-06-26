@@ -2,4 +2,4 @@ from pytia_ui_tools import __version__
 
 
 def test_version():
-    assert __version__ == "0.6.5"
+    assert __version__ == "0.6.6"
