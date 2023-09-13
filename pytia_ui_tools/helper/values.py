@@ -2,15 +2,16 @@
     Value related helper functions.
 """
 
-from tkinter import ttk
+
+from ttkbootstrap import Combobox
 
 
-def add_current_value_to_combobox_list(widget: ttk.Combobox) -> None:
+def add_current_value_to_combobox_list(widget: Combobox) -> None:
     """
     Helper function to add the current value of a combobox to the list of values of that combobox.
 
     Args:
-        widget (ttk.Combobox): The widget to add the current value to.
+        widget (Combobox): The `ttkbootstrap` widget to add the current value to.
 
     Example:
         Bind this function on focus-out to a combobox to add the current value of the combobox to

@@ -31,17 +31,18 @@
     Tkinter Scales templates.
 &#34;&#34;&#34;
 
-import tkinter as tk
-from tkinter import IntVar, ttk
+from tkinter import IntVar
 from typing import Callable, Optional
 
+from ttkbootstrap import Frame, Labelframe, Scale, Window
 
-class SnapScale(ttk.Scale):
-    &#34;&#34;&#34;Scale subclass that limits the precision of values.&#34;&#34;&#34;
+
+class SnapScale(Scale):
+    &#34;&#34;&#34;`ttkbootstrap` scale subclass that limits the precision of values.&#34;&#34;&#34;
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame,
+        master: Window | Frame | Labelframe,
         int_var: IntVar,
         from_: int,
         to: int,
@@ -53,7 +54,7 @@ class SnapScale(ttk.Scale):
         Inits the widget.
 
         Args:
-            master (_type_): The tkinter master object.
+            master (Window | Frame | Labelframe): The `ttkbootstrap` master object.
             int_var (IntVar): The int variable that connects to the scale.
             from_ (int): Scale minimum.
             to (int): Scale maximum.
@@ -106,15 +107,14 @@ class SnapScale(ttk.Scale):
 <dl>
 <dt id="pytia_ui_tools.widgets.scales.SnapScale"><code class="flex name class">
 <span>class <span class="ident">SnapScale</span></span>
-<span>(</span><span>master: tkinter.Tk | tkinter.Frame | tkinter.ttk.Frame, int_var: tkinter.IntVar, from_: int, to: int, tick: int, command: Optional[Callable] = None, **kwargs)</span>
+<span>(</span><span>master: ttkbootstrap.window.Window | tkinter.ttk.Frame | tkinter.ttk.Labelframe, int_var: tkinter.IntVar, from_: int, to: int, tick: int, command: Optional[Callable] = None, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Scale subclass that limits the precision of values.</p>
+<div class="desc"><p><code>ttkbootstrap</code> scale subclass that limits the precision of values.</p>
 <p>Inits the widget.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>master</code></strong> :&ensp;<code>_type_</code></dt>
-<dd>The tkinter master object.</dd>
+<dt>master (Window | Frame | Labelframe): The <code>ttkbootstrap</code> master object.</dt>
 <dt><strong><code>int_var</code></strong> :&ensp;<code>IntVar</code></dt>
 <dd>The int variable that connects to the scale.</dd>
 <dt><strong><code>from_</code></strong> :&ensp;<code>int</code></dt>
@@ -130,12 +130,12 @@ class SnapScale(ttk.Scale):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class SnapScale(ttk.Scale):
-    &#34;&#34;&#34;Scale subclass that limits the precision of values.&#34;&#34;&#34;
+<pre><code class="python">class SnapScale(Scale):
+    &#34;&#34;&#34;`ttkbootstrap` scale subclass that limits the precision of values.&#34;&#34;&#34;
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame,
+        master: Window | Frame | Labelframe,
         int_var: IntVar,
         from_: int,
         to: int,
@@ -147,7 +147,7 @@ class SnapScale(ttk.Scale):
         Inits the widget.
 
         Args:
-            master (_type_): The tkinter master object.
+            master (Window | Frame | Labelframe): The `ttkbootstrap` master object.
             int_var (IntVar): The int variable that connects to the scale.
             from_ (int): Scale minimum.
             to (int): Scale maximum.

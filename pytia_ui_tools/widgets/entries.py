@@ -2,18 +2,21 @@
     Tkinter Entries templates.
 """
 
-import tkinter as tk
-from tkinter import StringVar, ttk
+from tkinter import StringVar
+
+from ttkbootstrap import Entry, Frame, Labelframe, Window
 
 from pytia_ui_tools.helper.validators import validate_number
 
 
-class NumberEntry(ttk.Entry):
-    """Entry subclass widget that only accepts digits and a floating point."""
+class NumberEntry(Entry):
+    """
+    `ttkbootstrap` entry subclass widget that only accepts digits and a floating point.
+    """
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe,
+        master: Window | Frame | Labelframe,
         string_var: StringVar,
         replace_comma: bool = True,
         **kwargs,
@@ -22,7 +25,7 @@ class NumberEntry(ttk.Entry):
         Inits the widget.
 
         Args:
-            master (_type_): The tkinter window master object.
+            master (Window | Frame | Labelframe): The `ttkbootstrap` master object.
             string_var (StringVar): The tkinter string variable.
             replace_comma (bool): Replaces comma inputs with dots. Defaults to True.
         """

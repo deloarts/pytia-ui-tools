@@ -3,7 +3,7 @@
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.6.6-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/badge/Version-0.7.0-orange.svg?style=for-the-badge)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -20,6 +20,7 @@ Check out the pytia ecosystem:
 - **pytia-bill-of-material** ([web](https://pytia.deloarts.com/bill-of-material/v0.html), [repo](https://github.com/deloarts/pytia-bill-of-material)): Exports the bill of material and data of a product.
 - **pytia-title-block** ([web](https://pytia.deloarts.com/title-block/v0.html), [repo](https://github.com/deloarts/pytia-title-block)): An app to edit a drawing's title block.
 - **pytia-quick-export** ([web](https://pytia.deloarts.com/quick-export/v0.html), [repo](https://github.com/deloarts/pytia-quick-export)): Single file export with useful features.
+- **pytia-reorder-tree** ([web](https://pytia.deloarts.com/reorder-tree/v0.html), [repo](https://github.com/deloarts/pytia-reorder-tree)): Brings order in your product graph tree.
 - **pytia-ui-tools** ([web](https://pytia.deloarts.com/), [repo](https://github.com/deloarts/pytia-ui-tools)): A toolbox for all pytia apps.
 
 Table of contents:
@@ -65,10 +66,10 @@ PYTIA isn't available on PyPi, but you still can install it via pip. Here are tw
 If you want to install PYTIA-UI-TOOLS from the published wheel file, use:
 
 ```powershell
-python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.6.6/pytia_ui_tools-0.6.6-py3-none-any.whl
+python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.0/pytia_ui_tools-0.7.0-py3-none-any.whl
 ```
 
-This command installs PYTIA-UI-TOOLS v0.6.6.
+This command installs PYTIA-UI-TOOLS v0.7.0.
 
 #### 1.2.2 ssh
 
@@ -232,7 +233,7 @@ On a new revision, do the following:
 4. Check **pylint** output: `poetry run pylint pytia_ui_tools/`
 5. Update the **documentation**: `poetry run pdoc --force --html --output-dir docs pytia_ui_tools`
 6. Update the **lockfile**: `poetry lock`
-7. Update the **requirements.txt**: `poetry export --dev -f requirements.txt -o requirements.txt`
+7. Update the **requirements.txt**: `poetry export --with dev -f requirements.txt -o requirements.txt`
 8. **Build** the package: `poetry build`
 
 ## 3 license
@@ -241,6 +242,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+**v0.7.0**: Add ttkbootstrap themes.  
 **v0.6.6**: Update pywin32 dependency.  
 **v0.6.5**: Add groups to workspace model.  
 **v0.6.4**: Add png folder to workspace model.  
