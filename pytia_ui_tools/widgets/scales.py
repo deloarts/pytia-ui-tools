@@ -2,17 +2,18 @@
     Tkinter Scales templates.
 """
 
-import tkinter as tk
-from tkinter import IntVar, ttk
+from tkinter import IntVar
 from typing import Callable, Optional
 
+from ttkbootstrap import Frame, Labelframe, Scale, Window
 
-class SnapScale(ttk.Scale):
-    """Scale subclass that limits the precision of values."""
+
+class SnapScale(Scale):
+    """`ttkbootstrap` scale subclass that limits the precision of values."""
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame,
+        master: Window | Frame | Labelframe,
         int_var: IntVar,
         from_: int,
         to: int,
@@ -24,7 +25,7 @@ class SnapScale(ttk.Scale):
         Inits the widget.
 
         Args:
-            master (_type_): The tkinter master object.
+            master (Window | Frame | Labelframe): The `ttkbootstrap` master object.
             int_var (IntVar): The int variable that connects to the scale.
             from_ (int): Scale minimum.
             to (int): Scale maximum.
