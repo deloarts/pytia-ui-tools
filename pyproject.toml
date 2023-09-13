@@ -8,12 +8,13 @@ version = "0.6.6"
 
 [tool.poetry.dependencies]
 Jinja2 = "3.1.2"
-Pillow = "9.3.0"
-PyYAML = "6.0"
+Pillow = "10.0.0"
+PyYAML = "6.0.1"
 pyscreenshot = "3.0"
 python = "^3.10"
 pywin32 = "306"
-qrcode = "7.3.1"
+qrcode = "7.4.2"
+ttkbootstrap = "1.10.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "22.10.0"
