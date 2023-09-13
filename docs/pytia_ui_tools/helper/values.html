@@ -31,15 +31,16 @@
     Value related helper functions.
 &#34;&#34;&#34;
 
-from tkinter import ttk
+
+from ttkbootstrap import Combobox
 
 
-def add_current_value_to_combobox_list(widget: ttk.Combobox) -&gt; None:
+def add_current_value_to_combobox_list(widget: Combobox) -&gt; None:
     &#34;&#34;&#34;
     Helper function to add the current value of a combobox to the list of values of that combobox.
 
     Args:
-        widget (ttk.Combobox): The widget to add the current value to.
+        widget (Combobox): The `ttkbootstrap` widget to add the current value to.
 
     Example:
         Bind this function on focus-out to a combobox to add the current value of the combobox to
@@ -68,8 +69,8 @@ def add_current_value_to_combobox_list(widget: ttk.Combobox) -&gt; None:
 <div class="desc"><p>Helper function to add the current value of a combobox to the list of values of that combobox.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>widget</code></strong> :&ensp;<code>ttk.Combobox</code></dt>
-<dd>The widget to add the current value to.</dd>
+<dt><strong><code>widget</code></strong> :&ensp;<code>Combobox</code></dt>
+<dd>The <code>ttkbootstrap</code> widget to add the current value to.</dd>
 </dl>
 <h2 id="example">Example</h2>
 <p>Bind this function on focus-out to a combobox to add the current value of the combobox to
@@ -82,12 +83,12 @@ lambda _: add_current_value_to_combobox_list(my_combobox),
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def add_current_value_to_combobox_list(widget: ttk.Combobox) -&gt; None:
+<pre><code class="python">def add_current_value_to_combobox_list(widget: Combobox) -&gt; None:
     &#34;&#34;&#34;
     Helper function to add the current value of a combobox to the list of values of that combobox.
 
     Args:
-        widget (ttk.Combobox): The widget to add the current value to.
+        widget (Combobox): The `ttkbootstrap` widget to add the current value to.
 
     Example:
         Bind this function on focus-out to a combobox to add the current value of the combobox to

@@ -31,18 +31,21 @@
     Tkinter Entries templates.
 &#34;&#34;&#34;
 
-import tkinter as tk
-from tkinter import StringVar, ttk
+from tkinter import StringVar
+
+from ttkbootstrap import Entry, Frame, Labelframe, Window
 
 from pytia_ui_tools.helper.validators import validate_number
 
 
-class NumberEntry(ttk.Entry):
-    &#34;&#34;&#34;Entry subclass widget that only accepts digits and a floating point.&#34;&#34;&#34;
+class NumberEntry(Entry):
+    &#34;&#34;&#34;
+    `ttkbootstrap` entry subclass widget that only accepts digits and a floating point.
+    &#34;&#34;&#34;
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe,
+        master: Window | Frame | Labelframe,
         string_var: StringVar,
         replace_comma: bool = True,
         **kwargs,
@@ -51,7 +54,7 @@ class NumberEntry(ttk.Entry):
         Inits the widget.
 
         Args:
-            master (_type_): The tkinter window master object.
+            master (Window | Frame | Labelframe): The `ttkbootstrap` master object.
             string_var (StringVar): The tkinter string variable.
             replace_comma (bool): Replaces comma inputs with dots. Defaults to True.
         &#34;&#34;&#34;
@@ -77,15 +80,14 @@ class NumberEntry(ttk.Entry):
 <dl>
 <dt id="pytia_ui_tools.widgets.entries.NumberEntry"><code class="flex name class">
 <span>class <span class="ident">NumberEntry</span></span>
-<span>(</span><span>master: tkinter.Tk | tkinter.Frame | tkinter.ttk.Frame | tkinter.ttk.Labelframe, string_var: tkinter.StringVar, replace_comma: bool = True, **kwargs)</span>
+<span>(</span><span>master: ttkbootstrap.window.Window | tkinter.ttk.Frame | tkinter.ttk.Labelframe, string_var: tkinter.StringVar, replace_comma: bool = True, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Entry subclass widget that only accepts digits and a floating point.</p>
+<div class="desc"><p><code>ttkbootstrap</code> entry subclass widget that only accepts digits and a floating point.</p>
 <p>Inits the widget.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt><strong><code>master</code></strong> :&ensp;<code>_type_</code></dt>
-<dd>The tkinter window master object.</dd>
+<dt>master (Window | Frame | Labelframe): The <code>ttkbootstrap</code> master object.</dt>
 <dt><strong><code>string_var</code></strong> :&ensp;<code>StringVar</code></dt>
 <dd>The tkinter string variable.</dd>
 <dt><strong><code>replace_comma</code></strong> :&ensp;<code>bool</code></dt>
@@ -95,12 +97,14 @@ class NumberEntry(ttk.Entry):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class NumberEntry(ttk.Entry):
-    &#34;&#34;&#34;Entry subclass widget that only accepts digits and a floating point.&#34;&#34;&#34;
+<pre><code class="python">class NumberEntry(Entry):
+    &#34;&#34;&#34;
+    `ttkbootstrap` entry subclass widget that only accepts digits and a floating point.
+    &#34;&#34;&#34;
 
     def __init__(
         self,
-        master: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe,
+        master: Window | Frame | Labelframe,
         string_var: StringVar,
         replace_comma: bool = True,
         **kwargs,
@@ -109,7 +113,7 @@ class NumberEntry(ttk.Entry):
         Inits the widget.
 
         Args:
-            master (_type_): The tkinter window master object.
+            master (Window | Frame | Labelframe): The `ttkbootstrap` master object.
             string_var (StringVar): The tkinter string variable.
             replace_comma (bool): Replaces comma inputs with dots. Defaults to True.
         &#34;&#34;&#34;

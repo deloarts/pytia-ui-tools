@@ -31,15 +31,18 @@
     A simple text editor that accepts tkinter StringVars.
 &#34;&#34;&#34;
 
-import tkinter as tk
-from tkinter import StringVar, Toplevel, font, scrolledtext, ttk
+from tkinter import END, WORD, StringVar
 from typing import Optional
+
+from ttkbootstrap import Button, Frame
+from ttkbootstrap.scrolled import ScrolledText
+from ttkbootstrap.window import Style, Toplevel
 
 from pytia_ui_tools.window_manager import WindowManager
 
 
 class TextEditor(Toplevel):
-    &#34;&#34;&#34;Toplevel subclass that spawns a text editor window.&#34;&#34;&#34;
+    &#34;&#34;&#34;Toplevel subclass that spawns a text editor window with `ttkbootstrap` styling&#34;&#34;&#34;
 
     def __init__(
         self,
@@ -58,13 +61,12 @@ class TextEditor(Toplevel):
             height (int, optional): Window height. Defaults to 350.
         &#34;&#34;&#34;
         Toplevel.__init__(self)
+        Style()
 
         self.textvariable = textvariable
 
         self.title(title if title else &#34;Text Editor&#34;)
         self.attributes(&#34;-topmost&#34;, True)
-        self.default_font = font.nametofont(&#34;TkDefaultFont&#34;)
-        self.default_font.configure(family=&#34;Segoe UI&#34;, size=9)
         self.update()
 
         screen_width = self.winfo_screenwidth()
@@ -74,42 +76,39 @@ class TextEditor(Toplevel):
         self.geometry(f&#34;{width}x{height}+{x_coordinate}+{y_coordinate}&#34;)
         self.minsize(width, height)
 
-        style = ttk.Style(self)
-        style.configure(&#34;Footer.TButton&#34;, width=14)
-
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
-        self.frame_data = ttk.Frame(master=self, style=&#34;Data.TFrame&#34;)
+        self.frame_data = Frame(master=self)
         self.frame_data.grid(row=0, column=0, sticky=&#34;nsew&#34;, padx=10, pady=(10, 5))
         self.frame_data.grid_columnconfigure(0, weight=1)
         self.frame_data.grid_rowconfigure(0, weight=1)
 
-        self.frame_footer = ttk.Frame(master=self, height=30, style=&#34;Footer.TFrame&#34;)
+        self.frame_footer = Frame(master=self, height=30)
         self.frame_footer.grid(row=1, column=0, sticky=&#34;swe&#34;, padx=10, pady=(5, 10))
         self.frame_footer.grid_columnconfigure(0, weight=1)
 
-        self.text_widget = scrolledtext.ScrolledText(
-            self.frame_data, font=(&#34;Segoe UI&#34;, 9), wrap=tk.WORD
-        )
+        self.text_widget = ScrolledText(self.frame_data, wrap=WORD)
         self.text_widget.grid(row=0, column=0, sticky=&#34;nsew&#34;)
         self.text_widget.focus_set()
-        self.text_widget.delete(&#34;1.0&#34;, tk.END)
-        self.text_widget.insert(tk.END, self.textvariable.get())
+        self.text_widget.text.delete(&#34;1.0&#34;, END)
+        self.text_widget.text.insert(END, self.textvariable.get())
 
-        self.btn_save = ttk.Button(
+        self.btn_save = Button(
             self.frame_footer,
-            text=&#34;Apply&#34;,
             command=self.on_btn_apply,
-            style=&#34;Footer.TButton&#34;,
+            text=&#34;Apply&#34;,
+            style=&#34;outline&#34;,
+            width=10,
         )
         self.btn_save.grid(row=0, column=0, padx=(5, 2), pady=0, sticky=&#34;e&#34;)
 
-        self.btn_abort = ttk.Button(
+        self.btn_abort = Button(
             self.frame_footer,
-            text=&#34;Abort&#34;,
             command=self.on_btn_abort,
-            style=&#34;Footer.TButton&#34;,
+            text=&#34;Abort&#34;,
+            style=&#34;outline&#34;,
+            width=10,
         )
         self.btn_abort.grid(row=0, column=1, padx=(2, 0), pady=0, sticky=&#34;e&#34;)
 
@@ -128,7 +127,7 @@ class TextEditor(Toplevel):
         Callback function for the apply button.
         Closes the window and writes the text value to the textvariable.
         &#34;&#34;&#34;
-        self.textvariable.set(self.text_widget.get(&#34;1.0&#34;, tk.END))
+        self.textvariable.set(self.text_widget.text.get(&#34;1.0&#34;, END))
         self.grab_release()
         self.withdraw()
         self.destroy()
@@ -154,7 +153,7 @@ class TextEditor(Toplevel):
 <span>(</span><span>textvariable: tkinter.StringVar, width: int = 500, height: int = 350, title: Optional[str] = None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Toplevel subclass that spawns a text editor window.</p>
+<div class="desc"><p>Toplevel subclass that spawns a text editor window with <code>ttkbootstrap</code> styling</p>
 <p>Inits the text editor window. Opens the window on instantiation.</p>
 <h2 id="args">Args</h2>
 <dl>
@@ -172,7 +171,7 @@ class TextEditor(Toplevel):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class TextEditor(Toplevel):
-    &#34;&#34;&#34;Toplevel subclass that spawns a text editor window.&#34;&#34;&#34;
+    &#34;&#34;&#34;Toplevel subclass that spawns a text editor window with `ttkbootstrap` styling&#34;&#34;&#34;
 
     def __init__(
         self,
@@ -191,13 +190,12 @@ class TextEditor(Toplevel):
             height (int, optional): Window height. Defaults to 350.
         &#34;&#34;&#34;
         Toplevel.__init__(self)
+        Style()
 
         self.textvariable = textvariable
 
         self.title(title if title else &#34;Text Editor&#34;)
         self.attributes(&#34;-topmost&#34;, True)
-        self.default_font = font.nametofont(&#34;TkDefaultFont&#34;)
-        self.default_font.configure(family=&#34;Segoe UI&#34;, size=9)
         self.update()
 
         screen_width = self.winfo_screenwidth()
@@ -207,42 +205,39 @@ class TextEditor(Toplevel):
         self.geometry(f&#34;{width}x{height}+{x_coordinate}+{y_coordinate}&#34;)
         self.minsize(width, height)
 
-        style = ttk.Style(self)
-        style.configure(&#34;Footer.TButton&#34;, width=14)
-
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
-        self.frame_data = ttk.Frame(master=self, style=&#34;Data.TFrame&#34;)
+        self.frame_data = Frame(master=self)
         self.frame_data.grid(row=0, column=0, sticky=&#34;nsew&#34;, padx=10, pady=(10, 5))
         self.frame_data.grid_columnconfigure(0, weight=1)
         self.frame_data.grid_rowconfigure(0, weight=1)
 
-        self.frame_footer = ttk.Frame(master=self, height=30, style=&#34;Footer.TFrame&#34;)
+        self.frame_footer = Frame(master=self, height=30)
         self.frame_footer.grid(row=1, column=0, sticky=&#34;swe&#34;, padx=10, pady=(5, 10))
         self.frame_footer.grid_columnconfigure(0, weight=1)
 
-        self.text_widget = scrolledtext.ScrolledText(
-            self.frame_data, font=(&#34;Segoe UI&#34;, 9), wrap=tk.WORD
-        )
+        self.text_widget = ScrolledText(self.frame_data, wrap=WORD)
         self.text_widget.grid(row=0, column=0, sticky=&#34;nsew&#34;)
         self.text_widget.focus_set()
-        self.text_widget.delete(&#34;1.0&#34;, tk.END)
-        self.text_widget.insert(tk.END, self.textvariable.get())
+        self.text_widget.text.delete(&#34;1.0&#34;, END)
+        self.text_widget.text.insert(END, self.textvariable.get())
 
-        self.btn_save = ttk.Button(
+        self.btn_save = Button(
             self.frame_footer,
-            text=&#34;Apply&#34;,
             command=self.on_btn_apply,
-            style=&#34;Footer.TButton&#34;,
+            text=&#34;Apply&#34;,
+            style=&#34;outline&#34;,
+            width=10,
         )
         self.btn_save.grid(row=0, column=0, padx=(5, 2), pady=0, sticky=&#34;e&#34;)
 
-        self.btn_abort = ttk.Button(
+        self.btn_abort = Button(
             self.frame_footer,
-            text=&#34;Abort&#34;,
             command=self.on_btn_abort,
-            style=&#34;Footer.TButton&#34;,
+            text=&#34;Abort&#34;,
+            style=&#34;outline&#34;,
+            width=10,
         )
         self.btn_abort.grid(row=0, column=1, padx=(2, 0), pady=0, sticky=&#34;e&#34;)
 
@@ -261,7 +256,7 @@ class TextEditor(Toplevel):
         Callback function for the apply button.
         Closes the window and writes the text value to the textvariable.
         &#34;&#34;&#34;
-        self.textvariable.set(self.text_widget.get(&#34;1.0&#34;, tk.END))
+        self.textvariable.set(self.text_widget.text.get(&#34;1.0&#34;, END))
         self.grab_release()
         self.withdraw()
         self.destroy()
@@ -274,6 +269,7 @@ class TextEditor(Toplevel):
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
+<li>ttkbootstrap.window.Toplevel</li>
 <li>tkinter.Toplevel</li>
 <li>tkinter.BaseWidget</li>
 <li>tkinter.Misc</li>
@@ -312,7 +308,7 @@ Closes the window and writes the text value to the textvariable.</p></div>
     Callback function for the apply button.
     Closes the window and writes the text value to the textvariable.
     &#34;&#34;&#34;
-    self.textvariable.set(self.text_widget.get(&#34;1.0&#34;, tk.END))
+    self.textvariable.set(self.text_widget.text.get(&#34;1.0&#34;, END))
     self.grab_release()
     self.withdraw()
     self.destroy()</code></pre>

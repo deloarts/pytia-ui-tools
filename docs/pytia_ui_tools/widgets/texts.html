@@ -31,23 +31,35 @@
     Tkinter text widgets.
 &#34;&#34;&#34;
 
-import tkinter as tk
-from tkinter import StringVar, Toplevel, scrolledtext, ttk
+from tkinter import DISABLED, NORMAL, StringVar, Toplevel
 from typing import Optional
+
+from ttkbootstrap import Frame, Labelframe, Window, scrolled
 
 from pytia_ui_tools.tools.text_editor import TextEditor
 
 
-class ScrolledText(scrolledtext.ScrolledText):
-    &#34;&#34;&#34;Text subclass widget with a vertical scrollbar.&#34;&#34;&#34;
+class ScrolledText(scrolled.ScrolledText):
+    &#34;&#34;&#34;
+    `ttkbootstrap` ScrolledText subclass widget with a vertical scrollbar and
+    textvariable support.
+    &#34;&#34;&#34;
 
     def __init__(
         self,
         *args,
-        parent: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe | Toplevel,
+        parent: Window | Frame | Labelframe | Toplevel,
         textvariable: Optional[StringVar] = None,
         **kwargs,
     ):
+        &#34;&#34;&#34;Inits the widget.
+
+        Args:
+            parent (Window | Frame | Labelframe | Toplevel):  The `ttkbootstrap` \
+                master object.
+            textvariable (Optional[StringVar], optional): The tkinter textvariable. \
+                Defaults to None.
+        &#34;&#34;&#34;
         self._textvariable = textvariable or StringVar()
 
         super().__init__(parent, *args, **kwargs)
@@ -55,51 +67,30 @@ class ScrolledText(scrolledtext.ScrolledText):
         if &#34;state&#34; in kwargs:
             self.state = kwargs[&#34;state&#34;]
         else:
-            self.state = tk.NORMAL
+            self.state = NORMAL
 
         if self._textvariable is not None:
-            self.insert(&#34;1.0&#34;, self._textvariable.get())
-        self.tk.eval(
-            &#34;&#34;&#34;
-            proc widget_proxy {widget widget_command args} {
-                set result [uplevel [linsert $args 0 $widget_command]]
-                if {([lindex $args 0] in {insert replace delete})} {
-                    event generate $widget &lt;&lt;Change&gt;&gt; -when tail
-                }
-                return $result
-            }
-            &#34;&#34;&#34;
-        )
-        self.tk.eval(
-            &#34;&#34;&#34;
-            rename {widget} _{widget}
-            interp alias {{}} ::{widget} {{}} widget_proxy {widget} _{widget}
-        &#34;&#34;&#34;.format(
-                widget=str(tk.Text.__str__(self))
-            )
-        )
-        self.bind(&#34;&lt;&lt;Change&gt;&gt;&#34;, self._on_widget_change)
-        self.bind(
-            &#34;&lt;Double-Button-1&gt;&#34;,
-            lambda _: TextEditor(self._textvariable),
-        )
+            self.text.insert(&#34;1.0&#34;, self._textvariable.get())
 
-        if self._textvariable is not None:
-            self._textvariable.trace(&#34;wu&#34;, self._on_var_change)
+        self.text.bind(&#34;&lt;KeyRelease&gt;&#34;, self._on_widget_change)
+        self.text.bind(&#34;&lt;Double-Button-1&gt;&#34;, lambda _: TextEditor(self._textvariable))
+
+        # if self._textvariable is not None:
+        self._textvariable.trace(&#34;wu&#34;, self._on_var_change)
 
     def _on_var_change(self, *args):
         &#34;&#34;&#34;
         Callback function for the textvariable trace.
         Writes the textvariable value to the text widget.
         &#34;&#34;&#34;
-        state = self[&#34;state&#34;]
-        self[&#34;state&#34;] = tk.NORMAL
-        text_current = self.get(&#34;1.0&#34;, &#34;end-1c&#34;)
-        var_current = self._textvariable.get()  # type: ignore
+        state = self.text[&#34;state&#34;]
+        self.text[&#34;state&#34;] = NORMAL
+        text_current = self.text.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+        var_current = self._textvariable.get()
         if text_current != var_current:
-            self.delete(&#34;1.0&#34;, &#34;end&#34;)
-            self.insert(&#34;1.0&#34;, var_current)
-        self[&#34;state&#34;] = state
+            self.text.delete(&#34;1.0&#34;, &#34;end&#34;)
+            self.text.insert(&#34;1.0&#34;, var_current)
+        self.text[&#34;state&#34;] = state
 
     def _on_widget_change(self, event=None):
         &#34;&#34;&#34;
@@ -107,7 +98,7 @@ class ScrolledText(scrolledtext.ScrolledText):
         Writes the widget value to the textvariable.
         &#34;&#34;&#34;
         if self._textvariable is not None:
-            self._textvariable.set(self.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+            self._textvariable.set(self.text.get(&#34;1.0&#34;, &#34;end-1c&#34;))
 
     @property
     def state(self) -&gt; str:
@@ -117,28 +108,19 @@ class ScrolledText(scrolledtext.ScrolledText):
     @state.setter
     def state(self, value: str) -&gt; None:
         &#34;&#34;&#34;Sets the state of the widget. State can either be &#39;normal&#39; or &#39;disabled&#39;.&#34;&#34;&#34;
-        match value:
-            case tk.NORMAL:
-                self.configure(
-                    state=tk.NORMAL,
-                    foreground=&#34;#000000&#34;,
-                    background=&#34;#ffffff&#34;,
-                    cursor=&#34;xterm&#34;,
-                )
-                self.bind(
-                    &#34;&lt;Double-Button-1&gt;&#34;,
-                    lambda _: TextEditor(self._textvariable),
-                )
-            case tk.DISABLED:
-                self.configure(
-                    state=tk.DISABLED,
-                    foreground=&#34;#6d6d6d&#34;,
-                    background=&#34;#f0f0f0&#34;,
-                    cursor=&#34;arrow&#34;,
-                )
-                self.unbind(&#34;&lt;Double-Button-1&gt;&#34;)
-            case _:
-                raise ValueError(f&#34;Cannot set widget to state {value}&#34;)
+        if value == NORMAL:
+            self.text[&#34;state&#34;] = NORMAL
+            self.text[&#34;cursor&#34;] = &#34;xterm&#34;
+            self.text.bind(
+                &#34;&lt;Double-Button-1&gt;&#34;,
+                lambda _: TextEditor(self._textvariable),
+            )
+        elif value == DISABLED:
+            self.text[&#34;state&#34;] = DISABLED
+            self.text[&#34;cursor&#34;] = &#34;arrow&#34;
+            self.text.unbind(&#34;&lt;Double-Button-1&gt;&#34;)
+        else:
+            raise ValueError(f&#34;Cannot set widget to state {value}&#34;)
         self._state = value</code></pre>
 </details>
 </section>
@@ -153,42 +135,46 @@ class ScrolledText(scrolledtext.ScrolledText):
 <dl>
 <dt id="pytia_ui_tools.widgets.texts.ScrolledText"><code class="flex name class">
 <span>class <span class="ident">ScrolledText</span></span>
-<span>(</span><span>*args, parent: tkinter.Tk | tkinter.Frame | tkinter.ttk.Frame | tkinter.ttk.Labelframe | tkinter.Toplevel, textvariable: Optional[tkinter.StringVar] = None, **kwargs)</span>
+<span>(</span><span>*args, parent: ttkbootstrap.window.Window | tkinter.ttk.Frame | tkinter.ttk.Labelframe | tkinter.Toplevel, textvariable: Optional[tkinter.StringVar] = None, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Text subclass widget with a vertical scrollbar.</p>
-<p>Construct a text widget with the parent MASTER.</p>
-<p>STANDARD OPTIONS</p>
-<pre><code>background, borderwidth, cursor,
-exportselection, font, foreground,
-highlightbackground, highlightcolor,
-highlightthickness, insertbackground,
-insertborderwidth, insertofftime,
-insertontime, insertwidth, padx, pady,
-relief, selectbackground,
-selectborderwidth, selectforeground,
-setgrid, takefocus,
-xscrollcommand, yscrollcommand,
-</code></pre>
-<p>WIDGET-SPECIFIC OPTIONS</p>
-<pre><code>autoseparators, height, maxundo,
-spacing1, spacing2, spacing3,
-state, tabs, undo, width, wrap,
-</code></pre></div>
+<div class="desc"><p><code>ttkbootstrap</code> ScrolledText subclass widget with a vertical scrollbar and
+textvariable support.</p>
+<p>Inits the widget.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>parent (Window | Frame | Labelframe | Toplevel):
+The <code>ttkbootstrap</code>
+master object.</dt>
+<dt><strong><code>textvariable</code></strong> :&ensp;<code>Optional[StringVar]</code>, optional</dt>
+<dd>The tkinter textvariable.
+Defaults to None.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class ScrolledText(scrolledtext.ScrolledText):
-    &#34;&#34;&#34;Text subclass widget with a vertical scrollbar.&#34;&#34;&#34;
+<pre><code class="python">class ScrolledText(scrolled.ScrolledText):
+    &#34;&#34;&#34;
+    `ttkbootstrap` ScrolledText subclass widget with a vertical scrollbar and
+    textvariable support.
+    &#34;&#34;&#34;
 
     def __init__(
         self,
         *args,
-        parent: tk.Tk | tk.Frame | ttk.Frame | ttk.Labelframe | Toplevel,
+        parent: Window | Frame | Labelframe | Toplevel,
         textvariable: Optional[StringVar] = None,
         **kwargs,
     ):
+        &#34;&#34;&#34;Inits the widget.
+
+        Args:
+            parent (Window | Frame | Labelframe | Toplevel):  The `ttkbootstrap` \
+                master object.
+            textvariable (Optional[StringVar], optional): The tkinter textvariable. \
+                Defaults to None.
+        &#34;&#34;&#34;
         self._textvariable = textvariable or StringVar()
 
         super().__init__(parent, *args, **kwargs)
@@ -196,51 +182,30 @@ state, tabs, undo, width, wrap,
         if &#34;state&#34; in kwargs:
             self.state = kwargs[&#34;state&#34;]
         else:
-            self.state = tk.NORMAL
+            self.state = NORMAL
 
         if self._textvariable is not None:
-            self.insert(&#34;1.0&#34;, self._textvariable.get())
-        self.tk.eval(
-            &#34;&#34;&#34;
-            proc widget_proxy {widget widget_command args} {
-                set result [uplevel [linsert $args 0 $widget_command]]
-                if {([lindex $args 0] in {insert replace delete})} {
-                    event generate $widget &lt;&lt;Change&gt;&gt; -when tail
-                }
-                return $result
-            }
-            &#34;&#34;&#34;
-        )
-        self.tk.eval(
-            &#34;&#34;&#34;
-            rename {widget} _{widget}
-            interp alias {{}} ::{widget} {{}} widget_proxy {widget} _{widget}
-        &#34;&#34;&#34;.format(
-                widget=str(tk.Text.__str__(self))
-            )
-        )
-        self.bind(&#34;&lt;&lt;Change&gt;&gt;&#34;, self._on_widget_change)
-        self.bind(
-            &#34;&lt;Double-Button-1&gt;&#34;,
-            lambda _: TextEditor(self._textvariable),
-        )
+            self.text.insert(&#34;1.0&#34;, self._textvariable.get())
 
-        if self._textvariable is not None:
-            self._textvariable.trace(&#34;wu&#34;, self._on_var_change)
+        self.text.bind(&#34;&lt;KeyRelease&gt;&#34;, self._on_widget_change)
+        self.text.bind(&#34;&lt;Double-Button-1&gt;&#34;, lambda _: TextEditor(self._textvariable))
+
+        # if self._textvariable is not None:
+        self._textvariable.trace(&#34;wu&#34;, self._on_var_change)
 
     def _on_var_change(self, *args):
         &#34;&#34;&#34;
         Callback function for the textvariable trace.
         Writes the textvariable value to the text widget.
         &#34;&#34;&#34;
-        state = self[&#34;state&#34;]
-        self[&#34;state&#34;] = tk.NORMAL
-        text_current = self.get(&#34;1.0&#34;, &#34;end-1c&#34;)
-        var_current = self._textvariable.get()  # type: ignore
+        state = self.text[&#34;state&#34;]
+        self.text[&#34;state&#34;] = NORMAL
+        text_current = self.text.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+        var_current = self._textvariable.get()
         if text_current != var_current:
-            self.delete(&#34;1.0&#34;, &#34;end&#34;)
-            self.insert(&#34;1.0&#34;, var_current)
-        self[&#34;state&#34;] = state
+            self.text.delete(&#34;1.0&#34;, &#34;end&#34;)
+            self.text.insert(&#34;1.0&#34;, var_current)
+        self.text[&#34;state&#34;] = state
 
     def _on_widget_change(self, event=None):
         &#34;&#34;&#34;
@@ -248,7 +213,7 @@ state, tabs, undo, width, wrap,
         Writes the widget value to the textvariable.
         &#34;&#34;&#34;
         if self._textvariable is not None:
-            self._textvariable.set(self.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+            self._textvariable.set(self.text.get(&#34;1.0&#34;, &#34;end-1c&#34;))
 
     @property
     def state(self) -&gt; str:
@@ -258,42 +223,32 @@ state, tabs, undo, width, wrap,
     @state.setter
     def state(self, value: str) -&gt; None:
         &#34;&#34;&#34;Sets the state of the widget. State can either be &#39;normal&#39; or &#39;disabled&#39;.&#34;&#34;&#34;
-        match value:
-            case tk.NORMAL:
-                self.configure(
-                    state=tk.NORMAL,
-                    foreground=&#34;#000000&#34;,
-                    background=&#34;#ffffff&#34;,
-                    cursor=&#34;xterm&#34;,
-                )
-                self.bind(
-                    &#34;&lt;Double-Button-1&gt;&#34;,
-                    lambda _: TextEditor(self._textvariable),
-                )
-            case tk.DISABLED:
-                self.configure(
-                    state=tk.DISABLED,
-                    foreground=&#34;#6d6d6d&#34;,
-                    background=&#34;#f0f0f0&#34;,
-                    cursor=&#34;arrow&#34;,
-                )
-                self.unbind(&#34;&lt;Double-Button-1&gt;&#34;)
-            case _:
-                raise ValueError(f&#34;Cannot set widget to state {value}&#34;)
+        if value == NORMAL:
+            self.text[&#34;state&#34;] = NORMAL
+            self.text[&#34;cursor&#34;] = &#34;xterm&#34;
+            self.text.bind(
+                &#34;&lt;Double-Button-1&gt;&#34;,
+                lambda _: TextEditor(self._textvariable),
+            )
+        elif value == DISABLED:
+            self.text[&#34;state&#34;] = DISABLED
+            self.text[&#34;cursor&#34;] = &#34;arrow&#34;
+            self.text.unbind(&#34;&lt;Double-Button-1&gt;&#34;)
+        else:
+            raise ValueError(f&#34;Cannot set widget to state {value}&#34;)
         self._state = value</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
-<li>tkinter.scrolledtext.ScrolledText</li>
-<li>tkinter.Text</li>
+<li>ttkbootstrap.scrolled.ScrolledText</li>
+<li>tkinter.ttk.Frame</li>
+<li>tkinter.ttk.Widget</li>
 <li>tkinter.Widget</li>
 <li>tkinter.BaseWidget</li>
 <li>tkinter.Misc</li>
 <li>tkinter.Pack</li>
 <li>tkinter.Place</li>
 <li>tkinter.Grid</li>
-<li>tkinter.XView</li>
-<li>tkinter.YView</li>
 </ul>
 <h3>Instance variables</h3>
 <dl>
