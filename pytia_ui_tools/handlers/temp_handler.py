@@ -9,6 +9,7 @@ from tempfile import gettempdir
 from typing import List, Optional
 
 import pyscreenshot
+
 from pytia_ui_tools.log import log
 
 
@@ -58,7 +59,7 @@ class TempHandler:
         path = Path(gettempdir(), filename)
         screenshot = pyscreenshot.grab()
         if screenshot:
-            screenshot.save(path)
+            screenshot.save(path)  # type: ignore
             log.info(f"Saved screenshot to {path!r}")
             self.files_to_delete.append(path)
             return path

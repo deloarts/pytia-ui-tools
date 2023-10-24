@@ -8,10 +8,11 @@ from tkinter import messagebox as tkmsg
 from typing import List, Optional
 
 import jinja2
-from pytia_ui_tools.const import HOSTNAME, TEMPLATE_ERROR, USERNAME
-from pytia_ui_tools.log import log
 from win32com.client import CDispatch, Dispatch
 from win32com.server.exception import COMException
+
+from pytia_ui_tools.const import HOSTNAME, TEMPLATE_ERROR, USERNAME
+from pytia_ui_tools.log import log
 
 
 class MailHandler:
