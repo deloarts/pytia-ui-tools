@@ -4,7 +4,9 @@
 
 import sys
 from tkinter import messagebox as tkmsg
-from typing import Callable, List, Optional
+from typing import Callable
+from typing import List
+from typing import Optional
 
 from pytia_ui_tools.handlers.mail_handler import MailHandler
 from pytia_ui_tools.handlers.temp_handler import temphandler

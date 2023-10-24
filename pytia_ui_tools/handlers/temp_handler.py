@@ -6,7 +6,8 @@ import atexit
 import os
 from pathlib import Path
 from tempfile import gettempdir
-from typing import List, Optional
+from typing import List
+from typing import Optional
 
 import pyscreenshot
 

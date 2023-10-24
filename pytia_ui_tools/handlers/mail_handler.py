@@ -5,13 +5,17 @@
 import os
 from pathlib import Path
 from tkinter import messagebox as tkmsg
-from typing import List, Optional
+from typing import List
+from typing import Optional
 
 import jinja2
-from win32com.client import CDispatch, Dispatch
+from win32com.client import CDispatch
+from win32com.client import Dispatch
 from win32com.server.exception import COMException
 
-from pytia_ui_tools.const import HOSTNAME, TEMPLATE_ERROR, USERNAME
+from pytia_ui_tools.const import HOSTNAME
+from pytia_ui_tools.const import TEMPLATE_ERROR
+from pytia_ui_tools.const import USERNAME
 from pytia_ui_tools.log import log
 
 

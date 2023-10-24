@@ -4,8 +4,11 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field, fields
-from typing import List, Optional
+from dataclasses import dataclass
+from dataclasses import field
+from dataclasses import fields
+from typing import List
+from typing import Optional
 
 
 @dataclass

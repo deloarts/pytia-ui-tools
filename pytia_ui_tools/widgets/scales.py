@@ -3,9 +3,13 @@
 """
 
 from tkinter import IntVar
-from typing import Callable, Optional
+from typing import Callable
+from typing import Optional
 
-from ttkbootstrap import Frame, Labelframe, Scale, Window
+from ttkbootstrap import Frame
+from ttkbootstrap import Labelframe
+from ttkbootstrap import Scale
+from ttkbootstrap import Window
 
 
 class SnapScale(Scale):
