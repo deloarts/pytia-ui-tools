@@ -73,7 +73,6 @@ class ErrorHandler:
                 message=f&#34;{val}\n\nClick OK to terminate.&#34;,
             )
         else:
-
             if self.mail_handler.outlook_available():
                 result = tkmsg.askquestion(
                     title=self.mail_handler.app_title,
@@ -169,7 +168,6 @@ won't raise an error msg. Defaults to None.</dd>
                 message=f&#34;{val}\n\nClick OK to terminate.&#34;,
             )
         else:
-
             if self.mail_handler.outlook_available():
                 result = tkmsg.askquestion(
                     title=self.mail_handler.app_title,
@@ -230,7 +228,6 @@ logfile content and terminates the app.</p>
             message=f&#34;{val}\n\nClick OK to terminate.&#34;,
         )
     else:
-
         if self.mail_handler.outlook_available():
             result = tkmsg.askquestion(
                 title=self.mail_handler.app_title,

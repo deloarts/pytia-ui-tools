@@ -44,7 +44,6 @@ class ErrorHandler:
                 message=f"{val}\n\nClick OK to terminate.",
             )
         else:
-
             if self.mail_handler.outlook_available():
                 result = tkmsg.askquestion(
                     title=self.mail_handler.app_title,

@@ -37,9 +37,10 @@ from pathlib import Path
 from tempfile import gettempdir
 from typing import Optional
 
+from qrcode import QRCode  # type:ignore
+
 from pytia_ui_tools.exceptions import PytiaUiToolsFileTypeError
 from pytia_ui_tools.log import log
-from qrcode import QRCode
 
 
 class QR:
