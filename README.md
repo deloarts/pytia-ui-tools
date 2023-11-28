@@ -3,7 +3,7 @@
 Helper functions and widgets for all pytia ui apps.
 
 ![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
-![version](https://img.shields.io/badge/Version-0.7.1-orange.svg?style=for-the-badge)
+![version](https://img.shields.io/github/v/release/deloarts/pytia-ui-tools?style=for-the-badge&color=orange)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
@@ -242,27 +242,27 @@ On a new revision, do the following:
 
 ## 4 changelog
 
-**v0.7.1**: Update env.  
-**v0.7.0**: Add ttkbootstrap themes.  
-**v0.6.6**: Update pywin32 dependency.  
-**v0.6.5**: Add groups to workspace model.  
-**v0.6.4**: Add png folder to workspace model.  
-**v0.6.3**: Bump pillow to 9.3.0.  
-**v0.6.2**: Update deps due to vulnerability issue.  
-**v0.6.1**: Remove dependency py.  
-**v0.6.0**: Add file utility.  
-**v0.5.3**: Add drawing export folder to workspace model.  
-**v0.5.2**: Improve text editor.  
-**v0.5.1**: Fix workspace encoding.  
-**v0.5.0**: Add qr code functions.  
-**v0.4.1**: Add configure method to SnapScale.  
-**v0.4.0**: Add workspace handler.  
-**v0.3.1**: Fix ScrolledText widget.  
-**v0.3.0**: Add ScrolledText and text editor.  
-**v0.2.0**: Add NumberVar.  
-**v0.1.2**: Fix comma issue on NumberEntry.  
-**v0.1.1**: Bump pillow to 9.1.1.  
-**v0.1.0**: Initial commit.  
+[**v0.7.1**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.1): Update env.  
+[**v0.7.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.0): Add ttkbootstrap themes.  
+[**v0.6.6**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.6): Update pywin32 dependency.  
+[**v0.6.5**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.5): Add groups to workspace model.  
+[**v0.6.4**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.4): Add png folder to workspace model.  
+[**v0.6.3**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.3): Bump pillow to 9.3.0.  
+[**v0.6.2**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.2): Update deps due to vulnerability issue.  
+[**v0.6.1**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.1): Remove dependency py.  
+[**v0.6.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.6.0): Add file utility.  
+[**v0.5.3**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.5.3): Add drawing export folder to workspace model.  
+[**v0.5.2**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.5.2): Improve text editor.  
+[**v0.5.1**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.5.1): Fix workspace encoding.  
+[**v0.5.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.5.0): Add qr code functions.  
+[**v0.4.1**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.4.1): Add configure method to SnapScale.  
+[**v0.4.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.4.0): Add workspace handler.  
+[**v0.3.1**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.3.1): Fix ScrolledText widget.  
+[**v0.3.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.3.0): Add ScrolledText and text editor.  
+[**v0.2.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.2.0): Add NumberVar.  
+[**v0.1.2**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.1.2): Fix comma issue on NumberEntry.  
+[**v0.1.1**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.1.1): Bump pillow to 9.1.1.  
+[**v0.1.0**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.1.0): Initial commit.  
 
 ## 5 to do
 
