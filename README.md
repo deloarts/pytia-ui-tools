@@ -6,7 +6,7 @@ Helper functions and widgets for all pytia ui apps.
 ![version](https://img.shields.io/github/v/release/deloarts/pytia-ui-tools?style=for-the-badge&color=orange)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
-![OS](https://img.shields.io/badge/OS-WIN10%20|%20WIN11-blue.svg?style=for-the-badge)
+![OS](https://img.shields.io/badge/OS-WIN11-blue.svg?style=for-the-badge)
 
 > ✏️ This package only provides helper functions, widgets and some other stuff for all pytia ui apps. This package is therefore a required dependency for almost all pytia apps, but does nothing on its own.
 >
