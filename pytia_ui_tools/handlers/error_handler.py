@@ -56,9 +56,7 @@ class ErrorHandler:
                     icon="error",
                 )
                 if result == "yes":
-                    self.mail_handler.send_error_mail(
-                        val, temphandler.make_screenshot()
-                    )
+                    self.mail_handler.send_error_mail(val)
             else:
                 tkmsg.showerror(
                     title=self.mail_handler.app_title,
