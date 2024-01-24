@@ -2,18 +2,18 @@
     Module for the WindowManager class.
 """
 
-from ctypes import windll, wintypes
-from tkinter import Tk, Toplevel
+from ctypes import windll
+from ctypes import wintypes
+from tkinter import Tk
+from tkinter import Toplevel
 
-from pytia_ui_tools.const import (
-    GWL_STYLE,
-    SWP_FRAMECHANGED,
-    SWP_NOACTIVATE,
-    SWP_NOMOVE,
-    SWP_NOSIZE,
-    WS_CHILD,
-    WS_SYSMENU,
-)
+from pytia_ui_tools.const import GWL_STYLE
+from pytia_ui_tools.const import SWP_FRAMECHANGED
+from pytia_ui_tools.const import SWP_NOACTIVATE
+from pytia_ui_tools.const import SWP_NOMOVE
+from pytia_ui_tools.const import SWP_NOSIZE
+from pytia_ui_tools.const import WS_CHILD
+from pytia_ui_tools.const import WS_SYSMENU
 
 
 class WindowManager:

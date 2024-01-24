@@ -33,7 +33,9 @@
 
 import sys
 from tkinter import messagebox as tkmsg
-from typing import Callable, List, Optional
+from typing import Callable
+from typing import List
+from typing import Optional
 
 from pytia_ui_tools.handlers.mail_handler import MailHandler
 from pytia_ui_tools.handlers.temp_handler import temphandler
@@ -83,9 +85,7 @@ class ErrorHandler:
                     icon=&#34;error&#34;,
                 )
                 if result == &#34;yes&#34;:
-                    self.mail_handler.send_error_mail(
-                        val, temphandler.make_screenshot()
-                    )
+                    self.mail_handler.send_error_mail(val)
             else:
                 tkmsg.showerror(
                     title=self.mail_handler.app_title,
@@ -178,9 +178,7 @@ won't raise an error msg. Defaults to None.</dd>
                     icon=&#34;error&#34;,
                 )
                 if result == &#34;yes&#34;:
-                    self.mail_handler.send_error_mail(
-                        val, temphandler.make_screenshot()
-                    )
+                    self.mail_handler.send_error_mail(val)
             else:
                 tkmsg.showerror(
                     title=self.mail_handler.app_title,
@@ -238,9 +236,7 @@ logfile content and terminates the app.</p>
                 icon=&#34;error&#34;,
             )
             if result == &#34;yes&#34;:
-                self.mail_handler.send_error_mail(
-                    val, temphandler.make_screenshot()
-                )
+                self.mail_handler.send_error_mail(val)
         else:
             tkmsg.showerror(
                 title=self.mail_handler.app_title,

@@ -35,9 +35,7 @@ import atexit
 import os
 from pathlib import Path
 from tempfile import gettempdir
-from typing import List, Optional
-
-import pyscreenshot
+from typing import List
 
 from pytia_ui_tools.log import log
 
@@ -74,25 +72,6 @@ class TempHandler:
         if os.path.exists(path):
             os.remove(path)
             log.info(f&#34;Deleted tempfile {str(path)!r}&#34;)
-
-    def make_screenshot(self, filename: str = &#34;screenshot.png&#34;) -&gt; Optional[Path]:
-        &#34;&#34;&#34;
-        Takes a screenshot of the error and returns the save path.
-
-        Args:
-            filename (Path): The filename (with file extension) of the screenshot PNG.
-
-        Returns:
-            Optional[Path]: The save path. None if no screenshot has been taken.
-        &#34;&#34;&#34;
-        path = Path(gettempdir(), filename)
-        screenshot = pyscreenshot.grab()
-        if screenshot:
-            screenshot.save(path)  # type: ignore
-            log.info(f&#34;Saved screenshot to {path!r}&#34;)
-            self.files_to_delete.append(path)
-            return path
-        return None
 
 
 temphandler = TempHandler()</code></pre>
@@ -148,26 +127,7 @@ temphandler = TempHandler()</code></pre>
         path = Path(self.tempdir, filename)
         if os.path.exists(path):
             os.remove(path)
-            log.info(f&#34;Deleted tempfile {str(path)!r}&#34;)
-
-    def make_screenshot(self, filename: str = &#34;screenshot.png&#34;) -&gt; Optional[Path]:
-        &#34;&#34;&#34;
-        Takes a screenshot of the error and returns the save path.
-
-        Args:
-            filename (Path): The filename (with file extension) of the screenshot PNG.
-
-        Returns:
-            Optional[Path]: The save path. None if no screenshot has been taken.
-        &#34;&#34;&#34;
-        path = Path(gettempdir(), filename)
-        screenshot = pyscreenshot.grab()
-        if screenshot:
-            screenshot.save(path)  # type: ignore
-            log.info(f&#34;Saved screenshot to {path!r}&#34;)
-            self.files_to_delete.append(path)
-            return path
-        return None</code></pre>
+            log.info(f&#34;Deleted tempfile {str(path)!r}&#34;)</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
@@ -198,45 +158,6 @@ temphandler = TempHandler()</code></pre>
         log.info(f&#34;Deleted tempfile {str(path)!r}&#34;)</code></pre>
 </details>
 </dd>
-<dt id="pytia_ui_tools.handlers.temp_handler.TempHandler.make_screenshot"><code class="name flex">
-<span>def <span class="ident">make_screenshot</span></span>(<span>self, filename: str = 'screenshot.png') ‑> Optional[pathlib.Path]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Takes a screenshot of the error and returns the save path.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>filename</code></strong> :&ensp;<code>Path</code></dt>
-<dd>The filename (with file extension) of the screenshot PNG.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>Optional[Path]</code></dt>
-<dd>The save path. None if no screenshot has been taken.</dd>
-</dl></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def make_screenshot(self, filename: str = &#34;screenshot.png&#34;) -&gt; Optional[Path]:
-    &#34;&#34;&#34;
-    Takes a screenshot of the error and returns the save path.
-
-    Args:
-        filename (Path): The filename (with file extension) of the screenshot PNG.
-
-    Returns:
-        Optional[Path]: The save path. None if no screenshot has been taken.
-    &#34;&#34;&#34;
-    path = Path(gettempdir(), filename)
-    screenshot = pyscreenshot.grab()
-    if screenshot:
-        screenshot.save(path)  # type: ignore
-        log.info(f&#34;Saved screenshot to {path!r}&#34;)
-        self.files_to_delete.append(path)
-        return path
-    return None</code></pre>
-</details>
-</dd>
 </dl>
 </dd>
 </dl>
@@ -259,7 +180,6 @@ temphandler = TempHandler()</code></pre>
 <h4><code><a title="pytia_ui_tools.handlers.temp_handler.TempHandler" href="#pytia_ui_tools.handlers.temp_handler.TempHandler">TempHandler</a></code></h4>
 <ul class="">
 <li><code><a title="pytia_ui_tools.handlers.temp_handler.TempHandler.delete_tempfile" href="#pytia_ui_tools.handlers.temp_handler.TempHandler.delete_tempfile">delete_tempfile</a></code></li>
-<li><code><a title="pytia_ui_tools.handlers.temp_handler.TempHandler.make_screenshot" href="#pytia_ui_tools.handlers.temp_handler.TempHandler.make_screenshot">make_screenshot</a></code></li>
 </ul>
 </li>
 </ul>

@@ -5,13 +5,17 @@
 import os
 from pathlib import Path
 from tkinter import messagebox as tkmsg
-from typing import List, Optional
+from typing import List
+from typing import Optional
 
 import jinja2
-from win32com.client import CDispatch, Dispatch
+from win32com.client import CDispatch
+from win32com.client import Dispatch
 from win32com.server.exception import COMException
 
-from pytia_ui_tools.const import HOSTNAME, TEMPLATE_ERROR, USERNAME
+from pytia_ui_tools.const import HOSTNAME
+from pytia_ui_tools.const import TEMPLATE_ERROR
+from pytia_ui_tools.const import USERNAME
 from pytia_ui_tools.log import log
 
 
@@ -125,16 +129,13 @@ class MailHandler:
                 message=msg,
             )
 
-    def send_error_mail(
-        self, error_value: str, screenshot_path: Optional[Path] = None
-    ) -> None:
+    def send_error_mail(self, error_value: str) -> None:
         """
         Sends a mail from an error with the logfile using the local MS Outlook installation to the \
             standard receiver.
 
         Args:
             error_value (str): The error value (or description).
-            screenshot_path (Optional[str], optional): The path to the screenshot file.
             Defaults to None.
         """
         if os.path.exists(self.logfile):
@@ -150,8 +151,6 @@ class MailHandler:
                 error=error_value,
             )
             attachments = [str(self.logfile)]
-            if screenshot_path is not None:
-                attachments.append(str(screenshot_path))
 
             self.send_mail(
                 receiver=self.standard_receiver,

@@ -4,7 +4,10 @@
 
 from tkinter import StringVar
 
-from ttkbootstrap import Entry, Frame, Labelframe, Window
+from ttkbootstrap import Entry
+from ttkbootstrap import Frame
+from ttkbootstrap import Labelframe
+from ttkbootstrap import Window
 
 from pytia_ui_tools.helper.validators import validate_number
 
