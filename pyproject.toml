@@ -4,7 +4,7 @@ classifiers = ["Operating System :: Microsoft :: Windows"]
 description = "Helper functions and widgets for all pytia ui apps."
 name = "pytia-ui-tools"
 readme = "README.md"
-version = "0.7.1"
+version = "0.7.2"
 
 [tool.poetry.dependencies]
 Jinja2 = "3.1.3"
