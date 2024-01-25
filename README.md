@@ -53,7 +53,7 @@ Table of contents:
 
 ### 1.1 system requirements
 
-- Windows 10/11
+- Windows 11
 - [Python 3.10](https://www.python.org/downloads/)
 - MS Outlook (optional)
 
