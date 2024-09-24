@@ -48,6 +48,9 @@
         },
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "python.analysis.extraPaths": [
+        "./pytia_ui_tools"
+    ],
     "python.testing.pytestArgs": [
         "tests"
     ],
