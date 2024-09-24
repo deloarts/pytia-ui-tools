@@ -19,7 +19,7 @@ class WorkspaceModel:
     active: Optional[bool] = field(default=True)
     customer: Optional[str] = field(default=None)
     description: Optional[str] = field(default=None)
-    machine: Optional[str] = field(default=None)
+    product: Optional[str] = field(default=None)
     projects: Optional[List[str]] = field(default_factory=lambda: [])
     groups: Optional[List[str]] = field(default_factory=lambda: [])
     responsible: Optional[str] = field(default=None)
