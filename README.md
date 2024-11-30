@@ -66,10 +66,10 @@ PYTIA isn't available on PyPi, but you still can install it via pip. Here are tw
 If you want to install PYTIA-UI-TOOLS from the published wheel file, use:
 
 ```powershell
-python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.5/pytia_ui_tools-0.7.5-py3-none-any.whl
+python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.6/pytia_ui_tools-0.7.6-py3-none-any.whl
 ```
 
-This command installs PYTIA-UI-TOOLS v0.7.5.
+This command installs PYTIA-UI-TOOLS v0.7.6.
 
 #### 1.2.2 ssh
 
@@ -242,6 +242,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+[**v0.7.6**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.6): Update python version.  
 [**v0.7.5**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.5): Update deps.  
 [**v0.7.4**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.4): Rename machine to product, add definition prefix.  
 [**v0.7.3**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.3): Add documentation folder to workspace model.  
