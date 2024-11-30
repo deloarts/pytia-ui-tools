@@ -5,7 +5,7 @@ Helper functions and widgets for all pytia ui apps.
 ![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
 ![version](https://img.shields.io/github/v/release/deloarts/pytia-ui-tools?style=for-the-badge&color=orange)
 
-[![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
+[![python](https://img.shields.io/badge/Python-3.13-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN11-blue.svg?style=for-the-badge)
 
 > ✏️ This package only provides helper functions, widgets and some other stuff for all pytia ui apps. This package is therefore a required dependency for almost all pytia apps, but does nothing on its own.
@@ -54,7 +54,7 @@ Table of contents:
 ### 1.1 system requirements
 
 - Windows 11
-- [Python 3.10](https://www.python.org/downloads/)
+- [Python 3.13](https://www.python.org/downloads/)
 - MS Outlook (optional)
 
 ### 1.2 pip
@@ -66,10 +66,10 @@ PYTIA isn't available on PyPi, but you still can install it via pip. Here are tw
 If you want to install PYTIA-UI-TOOLS from the published wheel file, use:
 
 ```powershell
-python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.5/pytia_ui_tools-0.7.5-py3-none-any.whl
+python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.6/pytia_ui_tools-0.7.6-py3-none-any.whl
 ```
 
-This command installs PYTIA-UI-TOOLS v0.7.5.
+This command installs PYTIA-UI-TOOLS v0.7.6.
 
 #### 1.2.2 ssh
 
@@ -242,6 +242,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+[**v0.7.6**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.6): Update python version.  
 [**v0.7.5**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.5): Update deps.  
 [**v0.7.4**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.4): Rename machine to product, add definition prefix.  
 [**v0.7.3**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.3): Add documentation folder to workspace model.  
