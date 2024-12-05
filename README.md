@@ -5,7 +5,7 @@ Helper functions and widgets for all pytia ui apps.
 ![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
 ![version](https://img.shields.io/github/v/release/deloarts/pytia-ui-tools?style=for-the-badge&color=orange)
 
-[![python](https://img.shields.io/badge/Python-3.13-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
+[![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN11-blue.svg?style=for-the-badge)
 
 > ✏️ This package only provides helper functions, widgets and some other stuff for all pytia ui apps. This package is therefore a required dependency for almost all pytia apps, but does nothing on its own.
@@ -14,14 +14,14 @@ Helper functions and widgets for all pytia ui apps.
 
 Check out the pytia ecosystem:
 
-- **pytia** ([web](https://pytia.deloarts.com/), [repo](https://github.com/deloarts/pytia)): The heart of this project.
-- **pytia-property-manager** ([web](https://pytia.deloarts.com/property-manager/v0.html), [repo](https://github.com/deloarts/pytia-property-manager)) : An app to edit part and product properties.
-- **pytia-bounding-box** ([web](https://pytia.deloarts.com/bounding-box/v0.html), [repo](https://github.com/deloarts/pytia-bounding-box)): For retrieving the bounding box of a part.
-- **pytia-bill-of-material** ([web](https://pytia.deloarts.com/bill-of-material/v0.html), [repo](https://github.com/deloarts/pytia-bill-of-material)): Exports the bill of material and data of a product.
-- **pytia-title-block** ([web](https://pytia.deloarts.com/title-block/v0.html), [repo](https://github.com/deloarts/pytia-title-block)): An app to edit a drawing's title block.
-- **pytia-quick-export** ([web](https://pytia.deloarts.com/quick-export/v0.html), [repo](https://github.com/deloarts/pytia-quick-export)): Single file export with useful features.
-- **pytia-reorder-tree** ([web](https://pytia.deloarts.com/reorder-tree/v0.html), [repo](https://github.com/deloarts/pytia-reorder-tree)): Brings order in your product graph tree.
-- **pytia-ui-tools** ([web](https://pytia.deloarts.com/), [repo](https://github.com/deloarts/pytia-ui-tools)): A toolbox for all pytia apps.
+- **[pytia](https://github.com/deloarts/pytia)**: The heart of this project
+- **[pytia-property-manager](https://github.com/deloarts/pytia-property-manager)**: An app to edit part and product properties
+- **[pytia-bounding-box](https://github.com/deloarts/pytia-bounding-box)**: For retrieving the bounding box of a part
+- **[pytia-bill-of-material](https://github.com/deloarts/pytia-bill-of-material)**: Exports the bill of material and data of a product
+- **[pytia-title-block](https://github.com/deloarts/pytia-title-block)**: An app to edit a drawing's title block
+- **[pytia-quick-export](https://github.com/deloarts/pytia-quick-export)**: Single file export with useful features
+- **[pytia-reorder-tree](https://github.com/deloarts/pytia-reorder-tree)**: Brings order in your product graph tree
+- **[pytia-ui-tools](https://github.com/deloarts/pytia-ui-tools)**: A toolbox for all pytia apps
 
 Table of contents:
 
@@ -54,7 +54,7 @@ Table of contents:
 ### 1.1 system requirements
 
 - Windows 11
-- [Python 3.13](https://www.python.org/downloads/)
+- [Python 3.10](https://www.python.org/downloads/)
 - MS Outlook (optional)
 
 ### 1.2 pip
@@ -66,10 +66,10 @@ PYTIA isn't available on PyPi, but you still can install it via pip. Here are tw
 If you want to install PYTIA-UI-TOOLS from the published wheel file, use:
 
 ```powershell
-python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.6/pytia_ui_tools-0.7.6-py3-none-any.whl
+python -m pip install https://github.com/deloarts/pytia-ui-tools/releases/download/v0.7.7/pytia_ui_tools-0.7.7-py3-none-any.whl
 ```
 
-This command installs PYTIA-UI-TOOLS v0.7.6.
+This command installs PYTIA-UI-TOOLS v0.7.7.
 
 #### 1.2.2 ssh
 
@@ -242,6 +242,7 @@ On a new revision, do the following:
 
 ## 4 changelog
 
+[**v0.7.7**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.7): Fix issue with comtypes in py3.13.  
 [**v0.7.6**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.6): Update python version.  
 [**v0.7.5**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.5): Update deps.  
 [**v0.7.4**](https://github.com/deloarts/pytia-ui-tools/releases/tag/v0.7.4): Rename machine to product, add definition prefix.  
