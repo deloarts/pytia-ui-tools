@@ -9,7 +9,7 @@ version = "0.7.6"
 [tool.poetry.dependencies]
 Jinja2 = "3.1.4"
 PyYAML = "6.0.2"
-python = "^3.13"
+python = "^3.10"
 pywin32 = "308"
 qrcode = "7.4.2"
 ttkbootstrap = "1.10.1"

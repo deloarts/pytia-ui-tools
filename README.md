@@ -5,7 +5,7 @@ Helper functions and widgets for all pytia ui apps.
 ![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
 ![version](https://img.shields.io/github/v/release/deloarts/pytia-ui-tools?style=for-the-badge&color=orange)
 
-[![python](https://img.shields.io/badge/Python-3.13-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
+[![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN11-blue.svg?style=for-the-badge)
 
 > ✏️ This package only provides helper functions, widgets and some other stuff for all pytia ui apps. This package is therefore a required dependency for almost all pytia apps, but does nothing on its own.
@@ -54,7 +54,7 @@ Table of contents:
 ### 1.1 system requirements
 
 - Windows 11
-- [Python 3.13](https://www.python.org/downloads/)
+- [Python 3.10](https://www.python.org/downloads/)
 - MS Outlook (optional)
 
 ### 1.2 pip
