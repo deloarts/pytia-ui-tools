@@ -2,15 +2,15 @@
 
 Helper functions and widgets for all pytia ui apps.
 
-![state](https://img.shields.io/badge/State-beta-brown.svg?style=for-the-badge)
+![state](https://img.shields.io/badge/State-archived-brown.svg?style=for-the-badge)
 ![version](https://img.shields.io/github/v/release/deloarts/pytia-ui-tools?style=for-the-badge&color=orange)
 
 [![python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge)](https://www.python.org/downloads/)
 ![OS](https://img.shields.io/badge/OS-WIN11-blue.svg?style=for-the-badge)
 
+> ⚠️ Due to the lack of a CATIA License I'm no longer able to develop this app. I leave it here for others to use, but keep in mind that I can't provide updates or fixes.
+> 
 > ✏️ This package only provides helper functions, widgets and some other stuff for all pytia ui apps. This package is therefore a required dependency for almost all pytia apps, but does nothing on its own.
->
-> ⚠️ The layout of this app is heavily biased towards the workflow and needs of my companies' engineering team.
 
 Check out the pytia ecosystem:
 
